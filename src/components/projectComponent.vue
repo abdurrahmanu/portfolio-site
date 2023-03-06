@@ -1,33 +1,30 @@
 <template>
-  <div class="max-w-[80%] md:max-w-[600px] min-w-[400px] text-sm bg-zinc-100 rounded-xl md:min-h-[350px] md:flex">
-    <div class="md:w-[45%] p-5 md:border-r-2 md:border-r-black">
-      <div class="flex justify-between items-center md:h-[20%]">
-        <p class="uppercase text-base text-gray-500 pb-1">{{ project.name }}</p>
-        <div class="flex gap-3">
-          <div class="font-light uppercase"><a class="text-xs" target="_blank" :href="'https://' + project.link">link</a></div>
-          <div class="font-light uppercase"><a class="text-xs" target="_blank" :href="project.code">code</a></div>
-        </div>
-      </div>
-  
-      <div class="bg-gray-500 w-full h-44 md:h-[80%]"></div>
-    </div>
+  <div class="bg-zinc-200 p-2 px-0 grid md:shadow-sm hover:shadow-none transition md:shadow-zinc-500 md:min-w-[300px] min-w-[100%] gap-5 text-sm rounded-lg">
 
-    <div class="md:w-[55%] p-5">
-      <div class="py-5">
-        <p class="font-light text-lg"><span>Description: </span>{{ project.description }}</p>
+    <div class="grid gap-3">
+        <p class="uppercase text-center text-xl text-gray-500">{{ project.name }}</p>
+        <div class="uppercase text-center font-light text-xs">
+          <a class="border-2 border-transparent p-2 hover:border-zinc-600" target="_blank" :href="'https://' + project.link">link</a>
+          <a class="border-2 border-transparent p-2 hover:border-zinc-600" target="_blank" :href="project.code">code</a>
+        </div>
+
+      <div class="bg-gray-900 p-2 w-fit text-xs m-auto">
+        <code class="grid gap-2">
+          <div><span style="color:#FFCB6B;">$ npm</span><span style="color:#A6ACCD;"></span><span style="color:#C3E88D;"> create </span><span style="color:#A6ACCD;"> </span><span style="color:#C3E88D;">vite@latest</span><span style="color:#A6ACCD;"> </span><span style="color:#C3E88D;"> instagram-ui </span><span style="color:#A6ACCD;"> </span><span style="color:#C3E88D;">--template </span><span style="color:#A6ACCD;"> </span><span style="color:#C3E88D;">vue</span></div>
+          <div><span style="color:#676E95;font-style:italic;">import { createApp } from 'vue'</span></div>
+          <div><span style="color:#676E95;font-style:italic;">import App from './App.vue'</span></div>
+          <div><span style="color:#676E95;font-style:italic;">import './assets/base.css'</span></div>
+          <div><span style="color:#676E95;font-style:italic;">import router from './router'</span></div>
+          <div><span style="color:#676E95;font-style:italic;">app.use(router)</span></div>
+          <div><span style="color:#676E95;font-style:italic;">createApp(App).use(router).use(createPinia()).mount('#app')</span></div>
+        </code >
       </div>
-  
-      <div class="py-5">
-        <p class="py-2">Tools/Languages</p>
-        <ul class="flex gap-3 flex-wrap">
-          <li v-for="i in 4" :key="i" class="border-2 border-zinc-300 p-2 rounded-md">JAVASCRIPT</li>
-        </ul>
-      </div>
-  
-      <div class="flex">
-        <div class="bg-gray-300 w-fit p-1 border-r-2 border-black shadow-sm shadow-black">FEEDBACK</div>
-        <input type="text" class="outline-none w-[60%] inline-block font-mono bg-white p-1 shadow-sm shadow-black font-light">
-        <button class="bg-blue-400 px-3 w-fit rounded-r-full p-1 shadow-sm shadow-black">SEND</button>
+
+    </div>
+    <div class="grid gap-3">
+      <p class="font-light text-center">{{ project.description }}</p>
+      <div class="flex flex-wrap text-sm gap-1 justify-center"> 
+        <div v-for="language in languages_used" :key="language" class="border-2 uppercase hover:text-white hover:bg-black border-gray-300 text-xs p-2">{{ language }}</div>
       </div>
     </div>
   </div>
@@ -36,8 +33,10 @@
 <script setup>
 import { defineProps } from 'vue';
 const props = defineProps({
-    project: Object,
+  project: Object,
 })
+
+const languages_used = ['JS', 'VueJS', 'Pinia', 'vue-router', 'Tailwind CSS']
 
 </script>
 

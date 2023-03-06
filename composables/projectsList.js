@@ -12,7 +12,7 @@ export const projects = [
         code: 'https://github/abdurrahmanu/',
     },
     {
-        name: 'login aothentication',
+        name: 'login authentication',
         description: 'cloned the ui of instagram mobile web app using vue-router for pages routing.',
         link: '',
         code: 'https://github/abdurrahmanu/',
@@ -54,5 +54,16 @@ export const projects = [
         code: 'https://github/abdurrahmanu/',
     },
 ]
+
+export const stacks = {
+    'HTML': '<p> This is Abdulrahman Ahmed, a frontend Engineer...</p>',
+    'pinia': 'import {createStore} from "pinia"',
+    'vue-router': 'import {createRouter, createWebHistory} from `vue-router` ', 'javaScript': 'console.log("Hello World")',
+    'CSS': '<style> background: green </style>',
+    'Tailwind': '<p class="bg-blue-300"> Hello World </p>',
+    'vueJs': '<template><div></div></template>',
+    'SASS': "",
+    'NuxtJs': ''
+}
 
 

@@ -1,55 +1,40 @@
 <script setup>
-import { ref} from 'vue'
-import { projects } from '../composables/projectsList'
-import projectComponent from './components/projectComponent.vue'
-import footComponent from './components/footComponent.vue'
+import { ref, onMounted} from 'vue'
 import headerComponent from './components/headerComponent.vue'
-import messageComponent from './components/messageComponent.vue'
+import footerComponent from './components/footComponent.vue'
 import aboutComponent from './components/aboutComponent.vue'
+import projectsComponent from './components/projects.vue'
+import roundSidebar from './components/roundSidebar.vue'
 
-const stacks = ref({
-  'HTML': '<p> This is Abdulrahman Ahmed, a frontend Engineer...</p>',
-  'pinia': 'import {createStore} from "pinia"',
-  'vue-router': 'import {createRouter, createWebHistory} from `vue-router` ', 'javaScript': 'console.log("Hello World")',
-  'CSS': '<style> background: green </style>',
-  'Tailwind': '<p class="bg-blue-300"> Hello World </p>',
-  'vueJs': '<template><div></div></template>',
-  'SASS': "",
-  'NuxtJs': ''
+const show_nav = ref(false)
+const is_big_screen = ref(false)
+const open_sidebar = ref(false)
+
+window.addEventListener('resize', () => {
+  window.innerWidth > 550 ? is_big_screen.value = true : is_big_screen.value = false;
+});
+
+window.addEventListener('scroll', () => {
+  window.scrollY > 150 ? show_nav.value = true : show_nav.value = false;
+});
+
+onMounted(() => {
+  window.innerWidth > 550 ? is_big_screen.value = true : is_big_screen.value = false;
 })
+
 </script>
 
 <template>
-  <div class="pt-40 bg-slate-900">
-    <headerComponent />
-    <aboutComponent :stacks="stacks" />
-    <div class="p-6 pt-10 text-2xl font-bold bg-slate-800 mt-4">
-        <p class="text-center text-white text-4xl">MY PROJECTS...</p>
-        <div class="flex flex-wrap gap-16 pt-10 justify-center md:grid">
-          <projectComponent v-for="(project, i) in projects" :key="i" :project="project"/>
-        </div>
-    </div>
-    <footComponent />
+  <div class="pt-24 bg-zinc-100 px-10 h-full">
+    <roundSidebar @toggle="open_sidebar = !open_sidebar" :open_sidebar="open_sidebar"  v-if="!is_big_screen"/>
+    <headerComponent  :is_big_screen="is_big_screen" v-if="show_nav || is_big_screen" />
+    <aboutComponent />
+    <projectsComponent :is_big_screen="is_big_screen" />
+    <footerComponent />
   </div>
 </template>
 
-<style>
-.v-enter-from {
-  transform: translateX(-200px);
-  opacity:0.4;
-}
-
-.v-enter-active {
-  transition: all ease 2s;
-}
-
-.fade-enter-from {
-  opacity: 0.3;
-}
-
-.fade-enter-active {
-  transition: all ease 0.4s;
-}
+<style scoped>
 </style>
 
 
