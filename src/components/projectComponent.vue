@@ -1,5 +1,5 @@
 <template>
-  <div class="bg-zinc-200 p-2 px-0 grid md:shadow-sm hover:shadow-none transition md:shadow-zinc-500 md:min-w-[300px] min-w-[100%] gap-5 text-sm rounded-lg">
+  <div class="bg-zinc-200 p-2 px-0 grid md:shadow-sm hover:shadow-none md:min-w-[300px] min-w-[100%] gap-5 text-sm rounded-lg">
 
     <div class="grid gap-3">
         <p class="uppercase text-center text-xl text-gray-500">{{ project.name }}</p>
@@ -8,7 +8,7 @@
           <a class="border-2 border-transparent p-2 hover:border-zinc-600" target="_blank" :href="project.code">code</a>
         </div>
 
-      <div class="bg-gray-900 p-2 w-fit text-xs m-auto">
+      <!-- <div class="bg-gray-900 p-2 w-fit text-xs m-auto">
         <code class="grid gap-2">
           <div><span style="color:#FFCB6B;">$ npm</span><span style="color:#A6ACCD;"></span><span style="color:#C3E88D;"> create </span><span style="color:#A6ACCD;"> </span><span style="color:#C3E88D;">vite@latest</span><span style="color:#A6ACCD;"> </span><span style="color:#C3E88D;"> instagram-ui </span><span style="color:#A6ACCD;"> </span><span style="color:#C3E88D;">--template </span><span style="color:#A6ACCD;"> </span><span style="color:#C3E88D;">vue</span></div>
           <div><span style="color:#676E95;font-style:italic;">import { createApp } from 'vue'</span></div>
@@ -18,7 +18,7 @@
           <div><span style="color:#676E95;font-style:italic;">app.use(router)</span></div>
           <div><span style="color:#676E95;font-style:italic;">createApp(App).use(router).use(createPinia()).mount('#app')</span></div>
         </code >
-      </div>
+      </div> -->
 
     </div>
     <div class="grid gap-3">
