@@ -7,7 +7,7 @@
         @click="clicked"
         class="hover:text-black transition-all duration-75 border-b-4" 
         :class="[item.toLowerCase() ===  choice ? 'border-teal-900' : 'border-transparent']" v-for="(item, index) in nav" :key="index" >
-            <navItem :item="item"/>
+            <navItem :svg="svgs[index]" :item="item"/>
         </div>
     </div>
 </template>
@@ -21,6 +21,7 @@ import { computed } from '@vue/reactivity';
 
 const { color } = useOverlapNavBar()
 const { verySmall } = useScreenSize()
+const svgs = ref(['home', 'about', 'pen', 'contact', 'document'])
 const nav = ['Home', 'About', 'Projects', 'Contact', 'Resume']
 const choice = ref('home')
 const bg = ref('')

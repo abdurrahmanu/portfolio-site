@@ -6,8 +6,8 @@
 </template>
 
 <script setup>
-import MobileView from './mobileView/mobileView.vue'
-import DesktopView from './desktopView/desktopView.vue'
+import MobileView from './mobileView.vue'
+import DesktopView from './desktopView.vue'
 </script>
 
 <style scoped>
