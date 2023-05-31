@@ -1,20 +1,12 @@
 <template>
-    <header class=" bg-white shadow-sm shadow-slate-400 z-[999] p-7 h-20 text-3xl fixed top-0 left-0 w-full flex justify-between">
-        <div class="text-black text-xl font-mono">AHMED ABDULRAHMAN</div>
-        <ul v-if="is_big_screen" class="flex gap-3 text-sm">
-            <li>PROJECTS</li>
-            <li>ABOUT</li>
-            <li>STACKS</li>
-            <li>RESUME</li>
-        </ul>
-    </header>
+    <div class="text-[50px] w-full text-white font-black flex gap-4 place-content-center bg-teal-700 font-mono text-center border-black h-24 p-4 m-auto relative">        
+    <span class="rotate-3 hover:rotate-1"><span class="hover:text-gray-400" v-for="alphabet in heading[0]">{{ alphabet }}</span></span>
+    <span class="-rotate-6 hover:rotate-4"><span class="hover:text-gray-400" v-for="alphabet in heading[1]">{{ alphabet }}</span></span>
+    </div>
 </template>
 
 <script setup>
-import {defineProps} from 'vue'
+import { defineProps, ref } from 'vue';
 
-const props = defineProps({
-    is_big_screen: Boolean,
-})
-
+const heading = ['ABDULRAHMAN', 'AHMED']
 </script>
