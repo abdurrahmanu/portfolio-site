@@ -11,11 +11,11 @@
 <script setup>
 import { ref } from 'vue';
 import { useScreenSize } from '../composables/useScreenSize';
-import mainComponent from '../components/mainComponent.vue'
-import footerComponent from '../components/footerComponent.vue';
-import AboutMe from '../components/aboutComponent.vue';
-import MyProjects from '../components/projectsComponents.vue';
-import MySkills from '../components/skillsComponent.vue';
+import mainComponent from './mainComponent.vue'
+import footerComponent from './footerComponent.vue';
+import AboutMe from './aboutComponent.vue';
+import MyProjects from './projectsComponents.vue';
+import MySkills from './skillsComponent.vue';
 
 const { isBigScreen } = useScreenSize()
 const navBarBackground = ref('')

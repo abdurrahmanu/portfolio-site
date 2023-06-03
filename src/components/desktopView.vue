@@ -12,11 +12,11 @@
 
 <script setup>
 import { useScreenSize } from '../composables/useScreenSize';
-import allSocials from '../components/socialSvgsComponents.vue';
-import HeaderComponent from '../components/headerComponent.vue';
-import AboutMe from '../components/aboutComponent.vue';
-import MySkills from '../components/skillsComponent.vue';
-import MyProjects from '../components/projectsComponents.vue';
+import allSocials from './socialSvgsComponents.vue';
+import HeaderComponent from './headerComponent.vue';
+import AboutMe from './aboutComponent.vue';
+import MySkills from './skillsComponent.vue';
+import MyProjects from './projectsComponents.vue';
 
 const {isBigScreen} = useScreenSize()
 </script>
