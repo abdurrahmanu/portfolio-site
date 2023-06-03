@@ -4,7 +4,7 @@
         :class="[`hover:bg-gradient-to-br hover:from-${colour}-700 hover:via-${colour}-400 hover:to-white`]"
         class="p-[5px] rounded-md w-fit transition-all duration-200 ">
             <div class="grid justify-center p-5">
-                <img class="w-16" :src="svg + '.svg'" alt="">
+                <img class="w-16" :src="'../../public/' + svg + '.svg'" alt="">
             </div>
             <div ref="skillEl" class="p-2 md:text-xl font-bold text-center rounded-md">{{ skill }}</div>
         </div>

@@ -1,7 +1,7 @@
 <template>
     <div :class="{'pt-[50px]': !midScreen}" ref="container" id="about" class="text-center font-teal-900 bg-white py-16 pt-10 font-mono">
         <div class="grid m-auto w-fit hover:rotate-[360deg] transition-all duration-[3000ms] justify-center py-5" v-if="isBigScreen">
-            <img class="w-40" src="avatar.svg" alt="">
+            <img class="w-40" src="../../public/avatar.svg" alt="">
         </div>
         <div class="m-auto w-[90%]">
             <h2 class="md:text-5xl text-3xl font-extrabold py-2">ABOUT ME</h2>
