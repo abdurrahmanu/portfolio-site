@@ -1,5 +1,5 @@
 <template>
-    <div ref="container" id="about" class="text-center font-teal-900 bg-white py-16 pt-10 font-mono">
+    <div :class="{'pt-[50px]': !midScreen}" ref="container" id="about" class="text-center font-teal-900 bg-white py-16 pt-10 font-mono">
         <div class="grid m-auto w-fit hover:rotate-[360deg] transition-all duration-[3000ms] justify-center py-5" v-if="isBigScreen">
             <img class="w-40" src="avatar.svg" alt="">
         </div>
@@ -14,24 +14,22 @@
 </template>
 
 <script setup>
-import { onMounted, ref, watchEffect } from 'vue';
-import { useOverlapNavBar } from '../composables/topOverlapsNavBar';
+import { onMounted, ref, watchEffect, defineEmits } from 'vue';
 import { useScreenSize } from '../composables/useScreenSize';
+import { useOverlapNavBar } from '../composables/topOverlapsNavBar';
 
-const { isBigScreen } = useScreenSize()
+const { isBigScreen, midScreen } = useScreenSize()
 const container = ref(null)
 const containerTop = ref(null)
 const containerBottom = ref(null)
+const emit = defineEmits(['inView'])
 
 onMounted(() => {
-    containerBottom.value = container.value.getBoundingClientRect().bottom
-    containerTop.value = container.value.getBoundingClientRect().top
+    const { emitBoolean } = useOverlapNavBar(container.value)
+    window.addEventListener('scroll', event => {
+        if (emitBoolean.value) {
+            emit('inView', 'white')
+        }
+    })
 })
-
-watchEffect(() => {
-    if (containerTop.value < 88 && containerBottom.value > 88) {
-        useOverlapNavBar('white')
-    }
-})
-
 </script>

@@ -5,8 +5,7 @@
     :class="{
       'py-2 bg-white w-fit rounded-lg shadow-md shadow-blue-500 hover:shadow-sm hover:shadow-blue-500 transition-all duration-200' : isBigScreen,
       'py-4 bg-white w-fit m-auto grid gap-6 rounded-md': !isBigScreen,
-      'mt-16' : index % 2 !== 0 && isBigScreen,
-      'mb-16' : index % 2 === 0 && isBigScreen}"
+      'mt-16' : index % 2 !== 0 && isBigScreen}"
       class="text-sm p-3">
   
       <div class="grid gap-3">

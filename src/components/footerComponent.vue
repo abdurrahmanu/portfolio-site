@@ -1,10 +1,10 @@
 <template>
     <div id="contact" class="bg-teal-900">
-        <allSocials />
+        <SocialSvgsComponents />
     </div>
 </template>
 
 <script setup>
-import allSocials from './socialSvgsComponents.vue';
+import SocialSvgsComponents from './socialSvgsComponents.vue';
 
 </script>

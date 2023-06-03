@@ -13,6 +13,10 @@
 </template>
 
 <script setup>
+import { useScreenSize } from '../composables/useScreenSize';
+
+const { midScreen } = useScreenSize()
+
 </script>
 
 <style>

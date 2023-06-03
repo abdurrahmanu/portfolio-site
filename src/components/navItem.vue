@@ -1,7 +1,9 @@
 <template>
-    <div class="grid gap-1 text-white hover:text-black items-center px-2 justify-center rounded-sm font-mono p-1">
+    <div :class="[background === 'white' ? 'text-black' : 'text-white']" class="grid gap-1 hover:text-black items-center px-2 justify-center rounded-sm font-mono p-1">
         <div class="text-center flex justify-center">
-            <img class="w-6" :src="svg + '.svg'" alt="">
+            <a :href="idLink" @click="route(item)">
+                <img class="w-6" :src="svg + '.svg'" alt="">
+            </a>
         </div>
         <div class="text-center">
             <a @click="route(item)" :href="idLink">{{ item }}</a>
@@ -15,7 +17,8 @@ import { defineProps, ref } from 'vue';
 const idLink = ref('')
 const props = defineProps({
     item: String,
-    svg: String
+    svg: String,
+    background: String,
 })
 
 const route = (item) => {
