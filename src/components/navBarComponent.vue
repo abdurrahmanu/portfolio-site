@@ -1,13 +1,14 @@
 <template>
     <div
     ref="container"
-    :class="[background === 'white' ? `bg-[${background}]` : background === 'gray' ? `bg-${background}-500` : 'bg-teal-700']"
-    class="fixed top-0 left-0 w-full min-w-[200px] flex flex-wrap border-b z-40 py-6 justify-center m-auto">
+    class="fixed top-[7px] opacity-90 bg-sky-700 left-[50%] translate-x-[-50%] w-[80%] min-w-[200px] rounded-full flex flex-wrap z-40 p-1 justify-center m-auto">
         <div
         @click="clicked"
-        class="hover:text-black transition-all duration-75 border-b-4" 
-        :class="[item.toLowerCase() ===  choice ? 'border-teal-900' : 'border-transparent']" v-for="(item, index) in nav" :key="index" >
-            <navItem :background="background" :svg="svgs[index]" :item="item"/>
+        class="hover:text-black transition-all duration-75 border-b-2" 
+        :class="[item.toLowerCase() ===  choice ? 'border-black' : 'border-transparent']" v-for="(item, index) in nav" :key="index" >
+            <navItem 
+            @open-resume="$emit('open-resume', $event)"
+            :svg="svgs[index]" :item="item" />
         </div>
     </div>
 </template>
@@ -22,16 +23,17 @@ const { verySmall } = useScreenSize()
 const svgs = ref(['home', 'about', 'pen', 'contact', 'document'])
 const nav = ['Home', 'About', 'Projects', 'Contact', 'Resume']
 const choice = ref('home')
-const props = defineProps({
-    background: String
-})
 
 const clicked = (e) => {
     choice.value = e.target.innerText.toLowerCase()
 }
 
-watchEffect(()=> {
+const props = defineProps({
+    navSelection: String
+})
 
+const selectedNav = computed(() => {
+    return props.navSelection.substring(0, props.navSelection.length - 4)
 })
 
 </script>

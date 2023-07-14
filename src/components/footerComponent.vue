@@ -1,5 +1,6 @@
 <template>
-    <div id="contact" class="bg-teal-900">
+    <div class="bg-gray-800">
+        <div class="h-24 w-full"></div>
         <SocialSvgsComponents />
     </div>
 </template>

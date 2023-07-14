@@ -5,6 +5,7 @@ export function useScreenSize(size) {
     const verySmall = ref(false)
     const midScreen = ref(false)
     const xtraSmall = ref(false)
+    const midSmall = ref(false)
     const smallScreen = 600;
 
     window.addEventListener('resize', () => {
@@ -12,6 +13,7 @@ export function useScreenSize(size) {
         verySmall.value = innerWidth < 210
         xtraSmall.value = innerWidth < 180
         midScreen.value = innerWidth < 415
+        midSmall.value = innerWidth < 380
     });
 
     onMounted(() => {
@@ -19,9 +21,10 @@ export function useScreenSize(size) {
             isBigScreen.value = innerWidth > smallScreen;
             xtraSmall.value = innerWidth < 180
             midScreen.value = innerWidth < 415
+            midSmall.value = innerWidth < 380
         });
 
-    return { isBigScreen, verySmall, xtraSmall, midScreen };
+    return { isBigScreen, verySmall, xtraSmall, midScreen, midSmall };
 } 
 
 
