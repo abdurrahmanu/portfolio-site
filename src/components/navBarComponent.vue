@@ -1,7 +1,7 @@
 <template>
     <div
     ref="container"
-    class="fixed top-[7px] opacity-90 bg-sky-700 left-[50%] translate-x-[-50%] w-[80%] min-w-[200px] rounded-full flex flex-wrap z-40 p-1 justify-center m-auto">
+    class="fixed top-[7px] opacity-90 bg-sky-700 left-[50%] translate-x-[-50%] w-[80%] min-w-[200px] rounded-full flex flex-wrap z-40 p-3 justify-center m-auto">
         <div
         @click="clicked"
         class="hover:text-black transition-all duration-75 border-b-2" 

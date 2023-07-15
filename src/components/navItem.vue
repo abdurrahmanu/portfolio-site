@@ -22,7 +22,6 @@ const props = defineProps({
 })
 
 const route = (arg) => {
-    console.log(arg);
     if (arg !== 'Resume') {
         idLink.value = '#' + arg.toLowerCase()
         window.location = idLink.value

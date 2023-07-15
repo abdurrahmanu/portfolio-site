@@ -1,22 +1,19 @@
 <template>
     <div id="contact" class="w-full bg-gray-800 p-1 sm:p-4">
         <div class="grid p-4">
-            <p class="font-mono text-white pb-7 text-xl pl-2 lg:text-center underline">CONTACT</p>
-            <form action="http://gmail.com/ahmadabdulrahman103@gmail.com/" method="post">
-                <div class="flex relative w-full text-center m-auto max-w-[400px]">
-                    <input placeholder="email address" v-model="address" class="rounded-full w-full p-2 outline-none pl-8" type="email">
-                    <img class="w-6 absolute left-1 top-[50%] translate-y-[-50%]" src="../../public/email.svg" alt="">
-                    <button @click="submit" class="bg-teal-700 rounded-r-full p-[10px] text-white absolute right-[-1px] top-[50%] translate-y-[-50%]">SUBMIT</button>
-                </div>
-            </form>
-
-            <div class="pt-8 text-center">
-                <textarea placeholder="enter message" v-model="message" class="p-2 max-w-[500px] w-[90%] m-auto outline-none rounded-md min-h-[200px]" name="" id="" cols="30" rows="4"></textarea>
+            <p class="font-mono text-white pb-2 pl-5 text-xl lg:text-center underline">EMAIL ME</p>
+            
+            <div class="py-4 text-center">
+                <textarea :placeholder="textareaPlaceholder" v-model="message" class="p-2 max-w-[500px] w-[90%] m-auto outline-none rounded-md min-h-[200px]" name="" id="" cols="30" rows="4"></textarea>
             </div>
+            <button @click.prevent="submit" class="text-white bg-blue-400 w-fit px-16 m-auto p-2 rounded-full text-xl">SUBMIT</button>
         </div>
 
-        <div class="pb-10 lg:gap-16 flex flex-wrap justify-center m-auto p-5 gap-5">
-            <img v-for="(svgName, index) in svgsNames" :key="index" class="w-10 lg:w-16" :src="`../../public/${svgName}.svg`" alt="" >
+        <div class=" lg:gap-16 flex flex-wrap justify-center m-auto p-5 gap-9">
+            <div @click="go(index)" class="" v-for="(svgName, index) in svgsNames" 
+            :key="index">
+                <img class="w-10 lg:w-16" :src="`../../public/${svgName}.svg`" alt="" >
+            </div>
         </div>
     </div>
 </template>
@@ -24,17 +21,34 @@
 <script setup>
 import { ref, watchEffect } from 'vue';
 
-const svgsNames = ['email', 'linkedin', 'resume', 'github']
-
+const textareaPlaceholder = ref('send a message to me')
+const svgsNames = ['resume', 'linkedin', 'github', 'email']
 const message = ref('')
 const address = ref('')
 
-watchEffect(() => {
-    console.log(message.value, address.value);
-})
-
 const submit = (e) => {
-        
+    e.preventDefault()
+    if (message.value.length) {
+            window.open(`mailto:ahmedabdulrahman103@gmail.com?subject=portfolio?body=${message.value}`)
+    }
+    else {
+        textareaPlaceholder.value = 'write a message'
+        setTimeout(() => {
+            textareaPlaceholder.value = 'send a message to me'
+        }, 4000);
+    }
+}
+
+const go = (index) => {
+    if (svgsNames[index] === 'email') {
+        window.open('mailto:ahmedabdulrahman103@gmail.com')
+    } else if (svgsNames[index] === 'github') {
+        window.open('https://github/abdurrahmanu')
+    } else if (svgsNames[index] === 'linkedin') {
+        window.open('https://www.linkedin.com/in/ahmed-abdulrahman-3a0813205')
+    } else {
+        window.open('resume.pdf')
+    }
 }
 
 </script>

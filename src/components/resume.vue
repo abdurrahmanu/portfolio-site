@@ -1,7 +1,7 @@
 <template>
     <div>
         <p>MY RESUME</p>
-        <embed src="WATER_PUMP.pdf" type="application/pdf" width="400" height="400">
+        <embed src="resume.pdf" type="application/pdf" width="400" height="400">
     </div>
 </template>
 

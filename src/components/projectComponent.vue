@@ -1,5 +1,5 @@
 <template>
-  <div class="m-auto max-w-[80%]" :class="{'pb-5': !isBigScreen}">
+  <div class="m-auto" :class="{'pb-5': !isBigScreen}">
     <div 
     @mouseenter.passive="animateProject($event, index)"
     :class="{
