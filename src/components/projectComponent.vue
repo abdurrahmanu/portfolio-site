@@ -1,8 +1,8 @@
 <template>
   <div class="relative md:min-w-[500px]" :class="{'pb-10': !isBigScreen}">
     <div v-if="!isBigScreen">
-      <img width="200" class="absolute left-[60%] top-[-60px]" src="Ellipse 40.svg" alt="">
-      <img width="200" class="absolute bottom-[0] left-[20%]" src="Ellipse 40.svg" alt="">
+      <img width="200" class="absolute left-[60%] top-[-60px]" src="../../public/ellipse.svg" alt="">
+      <img width="200" class="absolute bottom-[0] left-[20%]" src="../../public/ellipse.svg" alt="">
     </div>
     <div class="w-[70%] max-w-[90%] md:w-full md:max-w-full m-auto opacity-50 h-fit relative bg-zinc-900 z-20 rounded-md p-1">
 
