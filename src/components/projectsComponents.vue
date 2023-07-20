@@ -1,30 +1,27 @@
 <template>
-    <div class="bg-white">
-        <div class="h-[70px] w-full"></div>
-        <h1 class="text-center font-mono text-3xl font-bold md:text-5xl p-4">PROJECTS</h1>
-        <div ref="container" id="projects" 
-        :class="{'flex py-10 flex-wrap gap-5 gap-y-9 justify-center': isBigScreen,
-        'grid justify-center' : midScreen}">
+    <div id="projects" class="md:pb-20">
+        <div class="h-24 w-full"></div>
+        <h1 class="text-center font-mono text-3xl text-white font-bold md:text-5xl pb-5 md:pb-10">PROJECTS</h1>
+
+
+        <div
+        :class="{'max-w-[90%] w-fit flex flex-wrap justify-center gap-10 m-auto': isBigScreen,
+        'grid justify-center' : midScreen}" class="">
             <projectComponent
             v-for="(project, index) in projects" 
             :index="index" 
             :key="index" 
             :project="project" />
         </div>
+
     </div>
 </template>
 
 <script setup>
 import projectComponent from './projectComponent.vue';
 import { useScreenSize } from '../composables/useScreenSize'
-import { useOverlapNavBar } from '../composables/topOverlapsNavBar';
-import { ref, defineEmits, onMounted, watchEffect } from 'vue';
 
 const { isBigScreen, midScreen } = useScreenSize()
-const container = ref(null)
-const containerTop = ref(null)
-const containerBottom = ref(null)
-
 const projects = [
     {
         name: 'instagram-ui',
@@ -70,20 +67,4 @@ const projects = [
     },
 ]
 
-const emit = defineEmits(['inView'])
-
-onMounted(() => {
-    const { emitBoolean } = useOverlapNavBar(container.value)
-    window.addEventListener('scroll', event => {
-        if (emitBoolean.value) {
-            emit('inView', 'white')
-        }
-    })
-})
-
-
 </script>
-
-<style lang="scss" scoped>
-
-</style>

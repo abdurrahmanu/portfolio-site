@@ -1,33 +1,34 @@
 <template>
-    <div @click="route(item)" class="grid gap-1 text-white hover:text-black items-center px-2 justify-center rounded-sm font-mono p-1">
+    <div @click="route(item)" class="grid gap-1 text-black font-bold hover:text-black items-center px-2 justify-center rounded-sm font-mono p-1">
         <div class="text-center flex justify-center">
-            <img class="w-5" :src="'../../public/' + svg + '.svg'" alt="">
-        </div>
-        <div class="text-center text-xs">
-            <a v-if="!midSmall">{{ item }}</a>
+            <img :class="[size === 'large' ? 'w-8' : 'w-4']" class="" :src="svg + '.svg'" alt="">
         </div>
     </div>
 </template>
 
 <script setup>
-import { defineProps, ref } from 'vue';
+import { defineProps, ref, defineEmits } from 'vue';
 import { useScreenSize } from '../composables/useScreenSize';
 
-const emit = defineEmits(['open-resume'])
-const {isBigScreen, midScreen, verySmall, midSmall} = useScreenSize()
+const emit = defineEmits(['contact-modal', 'highlight-resume'])
+const {midSmall} = useScreenSize()
 const idLink = ref('')
+
 const props = defineProps({
     item: String,
     svg: String,
+    size: String
 })
 
 const route = (arg) => {
-    if (arg !== 'Resume') {
+    if (arg === 'Contact') {
+        emit('contact-modal')
+        return
+    } else if (arg !== 'Resume') {
+        console.log(arg);
         idLink.value = '#' + arg.toLowerCase()
         window.location = idLink.value
-    } else {
-        emit('open-resume', true)
-    }
+    } else emit('highlight-resume')
 }
 
 </script>

@@ -1,17 +1,12 @@
 <template>
-    <div class="h-full">
-        <MobileView />
-        <DesktopView />
-    </div>
+        <mobileView />
+        <desktopView />
 </template>
 
 <script setup>
-import MobileView from '../components/mobileView.vue'
-import DesktopView from '../components/desktopView.vue'
+import mobileView from './mobileView.vue';
+import desktopView from './desktopView.vue';
 </script>
-
-<style scoped>
-</style>
 
 
 

@@ -1,11 +1,8 @@
 <template>
-    <div class="">
-        <div class="bg-white rounded-full">
-            <div 
-            class=" rounded-md transition-all duration-200 ">
-                <div class="grid justify-center p-4">
-                    <img class="lg:w-16 w-10" :src="'../../public/' + svg + '.svg'" alt="">
-                </div>
+    <div class="w-fit">
+        <div class="bg-white rounded-full w-fit m-auto">
+            <div class="grid w-fit m-auto justify-center p-2">
+                <img class="w-6 md:w-8" :src="svg + '.svg'" alt="">
             </div>
         </div>
         <div class="uppercase text-xs text-center font-mono font-bold p-2 text-white">{{ skill }}</div>

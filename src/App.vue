@@ -3,13 +3,8 @@ import HomeView from './Views/HomeView.vue';
 </script>
 
 <template>
-  <div class="bg-[#243945]">
-    <HomeView />
-  </div>
+  <HomeView />
 </template>
-
-<style scoped>
-</style>
 
 
 

@@ -1,30 +1,41 @@
 <template>
-    <div ref="container" class="bg-gray-800">
-        <div id="skills">
-            <div class="h-[70px] w-full"></div>
-            <h2 class="text-white text-3xl font-mono text-center">MY SKILLS</h2>
-            <div class="justify-center flex gap-10 lg:gap-20 flex-wrap py-4 w-[90%] m-auto">
-                <skillComponent 
-                v-for="(skill, index) in skills" 
-                :skill="skill" 
-                :svg="svgs[index]" 
-                :key="index" 
-                :index="index" />
+    <div class="flex w-fit m-auto py-10">
+        <div class="w-10 h-68 bg-neutral-950 z-10"></div>
+        <div class="md:w-[600px] md:m-auto">
+            <div class="relative">
+                <div class="text-center absolute top-[-30px] z-[10] text-slate-300">
+                </div>
+                <div class="h-7 absolute top-[-25px] bg-neutral-950 w-full"></div>
+                <div :class="[changeColor ? 'shadow-blue-400' : 'shadow-slate-200']" class="h-10 bg-transparent shadow-2xl"></div>
+                <h2 class="font-mono text-center pt-6 text-2xl underline text-slate-300">STACK</h2>
+                <div                
+                    @mouseover="animateColor('enter')"
+                    @mouseleave="animateColor('leave')" 
+                    class="justify-center flex flex-wrap gap-5 py-4 w-[90%] m-auto">
+                    <skillComponent 
+                    v-for="(skill, index) in skills" 
+                    :skill="skill" 
+                    :svg="svgs[index]" 
+                    :key="index" 
+                    :index="index" />
+                </div>
+                <div :class="[changeColor ? 'shadow-blue-400' : 'shadow-slate-200']" class="h-10 bg-transparent shadow-2xl rotate-180"></div>
+                <div class="h-7 absolute bottom-[-25px] bg-neutral-950 w-full"></div>
             </div>
         </div>
+        <div class="w-10 h-68 bg-neutral-950 z-10"></div>
     </div>
 </template>
 
 <script setup>
-import { ref, defineEmits, onMounted, watchEffect } from 'vue';
+import { ref } from 'vue';
 import skillComponent from './skillComponent.vue';
-import { useOverlapNavBar } from '../composables/topOverlapsNavBar'
-
-const container = ref(null)
-const emit = defineEmits(['inView'])
-
 
 const skills = ref(['HTML', 'CSS', 'JS', 'VueJS', 'GitHub', 'Tailwind'])
 const svgs = ref(['html', 'css', 'js', 'vue', 'github', 'tailwindcss'])
-</script>
+const changeColor = ref(false)
 
+const animateColor = (event) => {
+    event === 'enter' ? changeColor.value = true : changeColor.value = false
+}
+</script>
