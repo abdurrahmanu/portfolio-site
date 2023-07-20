@@ -1,7 +1,7 @@
 <template>
     <div @click="route(item)" class="grid gap-1 text-black font-bold hover:text-black items-center px-2 justify-center rounded-sm font-mono p-1">
         <div class="text-center flex justify-center">
-            <img :class="[size === 'large' ? 'w-8' : 'w-4']" class="" :src="svg + '.svg'" alt="">
+            <img :class="[size === 'large' ? 'w-8' : 'w-6']" class="" :src="svg + '.svg'" alt="">
         </div>
     </div>
 </template>

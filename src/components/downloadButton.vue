@@ -11,6 +11,7 @@
 </template>
 
 <script setup>
+import {ref} from 'vue'
 import { useScreenSize } from '../composables/useScreenSize';
 
 const { verySmall, xtraSmall } = useScreenSize()
