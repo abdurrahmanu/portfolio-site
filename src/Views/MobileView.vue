@@ -1,8 +1,8 @@
 <template>
-    <div id="home" class=" pt-16  bg-neutral-950" v-if="!isBigScreen">
+    <div id="home" class="dark:bg-neutral-900 bg-white  pt-16" v-if="!isBigScreen">
         <mainComponent />
         <MyProjects />
-        <div class="text-slate-300 text-xs font-mono italic text-center pb-3">@Copyright {{ new Date().getFullYear() }}</div>
+        <CopyrightComponent />
     </div>
 </template>
 
@@ -10,6 +10,8 @@
 import { useScreenSize } from '../composables/useScreenSize';
 import mainComponent from '../components/mainComponent.vue'
 import MyProjects from '../components/projectsComponents.vue';
+import { ref, defineProps, watchEffect } from 'vue'
+import CopyrightComponent from '../components/copyrightComponent.vue';
 
 const { isBigScreen } = useScreenSize()
 </script>

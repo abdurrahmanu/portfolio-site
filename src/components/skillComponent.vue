@@ -1,11 +1,11 @@
 <template>
     <div class="w-fit">
-        <div class="bg-white rounded-full w-fit m-auto">
+        <div class="rounded-full dark:bg-white bg-slate-200 w-fit m-auto">
             <div class="grid w-fit m-auto justify-center p-2">
                 <img class="w-6 md:w-8" :src="svg + '.svg'" alt="">
             </div>
         </div>
-        <div class="uppercase text-xs text-center font-mono font-bold p-2 text-white">{{ skill }}</div>
+        <div class="uppercase text-xs text-center font-mono font-bold p-2 dark:text-white text-black ">{{ skill }}</div>
     </div>
 </template>
 

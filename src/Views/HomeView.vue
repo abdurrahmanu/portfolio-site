@@ -1,11 +1,14 @@
 <template>
-        <mobileView />
+        <MobileView />
         <desktopView />
 </template>
 
 <script setup>
-import mobileView from './mobileView.vue';
 import desktopView from './desktopView.vue';
+import MobileView from './mobileView.vue'
+import {ref, watchEffect} from 'vue'
+
+const isDarkMode = ref(false)
 </script>
 
 

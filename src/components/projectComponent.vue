@@ -1,10 +1,6 @@
 <template>
-  <div class="relative md:min-w-[500px]" :class="{'pb-10': !isBigScreen}">
-    <div v-if="!isBigScreen">
-      <img width="200" class="absolute left-[60%] top-[-60px]" src="../../public/ellipse.svg" alt="">
-      <img width="200" class="absolute bottom-[0] left-[20%]" src="../../public/ellipse.svg" alt="">
-    </div>
-    <div class="w-[70%] max-w-[90%] md:w-full md:max-w-full m-auto opacity-50 h-fit relative bg-zinc-900 z-20 rounded-md p-1">
+  <div class="relative max-w-[400px] w-[90%] m-auto" :class="{'pb-10': !isBigScreen}">
+    <div class="w-[90%] max-w-[400px] border md:w-full md:max-w-full m-auto h-fit relative bg-zinc-900 border-slate-600 z-20 rounded-md p-1">
 
       <div class="flex items-center justify-between px-2">
         <p class="uppercase md:text-center text-xs md:text-base text-white"><span class="text-white font-mono font-black">{{ index + 1 }}. </span>{{project.name}}</p>

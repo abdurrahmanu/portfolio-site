@@ -1,7 +1,7 @@
 <template>
     <div
     :class="[imagePutInPlace ? 'gap-[64px]' : 'delay-500 gap-0']"
-    class="fixed top-[7px] bg-white opacity-80 transition-all duration-1000  left-[50%] translate-x-[-50%] w-fit rounded-full flex z-50  p-3 px-7 justify-center m-auto">
+    class="fixed top-[7px] dark:bg-white bg-zinc-500 opacity-80 transition-all duration-200 left-[50%] translate-x-[-50%] w-fit rounded-full flex z-50  p-1 px-7 justify-center m-auto">
     <div class="flex ">
         <div
         @click="clicked"

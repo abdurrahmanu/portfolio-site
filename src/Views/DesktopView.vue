@@ -1,17 +1,12 @@
 <template>
-    <div class="bg-neutral-950 pt-36" v-if="isBigScreen">
-        <div class="p-4">
-            <div ref="" class="grid hover:drop-shadow-2xl rounded-full justify-center w-fit m-auto bg-slate-500 transition-all duration-500 hover:bg-slate-800 p-5 hover:scale-[90%]">
-                <img ref="img" class="w-32 transition-all duration-500" src="../../public/muslim_man.svg" alt="">
-            </div>
+    <div class="pt-36 dark:bg-neutral-900 bg-white" v-if="isBigScreen">
+        <desktopNavBarComponent
+        @highlight-resume="highlightResume" />
+        <div class="flex relative gap-5 items-center m-auto w-fit max-w-[700px] py-4">
+            <myPicture />
+            <aboutComponent />
         </div>
-        <desktopNavBarComponent />
-        <div class="text-slate-200 w-[900px] text-lg font-mono  p-4 m-auto text-center">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem aliquam asperiores minima quas veritatis expedita quaerat laudantium tempora aspernatur saepe?
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem aliquam asperiores minima quas veritatis expedita quaerat laudantium tempora aspernatur saepe?
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem aliquam asperiores minima quas veritatis expedita quaerat laudantium tempora aspernatur saepe?
-        </div>
-        <MySkills />
+        <skillsComponent1 />
         <MyProjects />
         <FootComponent />
     </div>
@@ -19,10 +14,30 @@
 
 <script setup>
 import { useScreenSize } from '../composables/useScreenSize';
+import aboutComponent from '../components/aboutComponent.vue'
+import UseModalComponent from '../components/useModalComponent.vue'
+import myPicture from '../components/myPicture.vue'
 import desktopNavBarComponent from '../components/desktopNavBarComponent.vue';
-import MySkills from '../components/skillsComponent.vue';
+import skillsComponent1 from '../components/skillsComponent1.vue';
 import MyProjects from '../components/projectsComponents.vue';
 import FootComponent from '../components/footComponent.vue';
+import {ref, defineProps, watchEffect} from 'vue'
 
-const {isBigScreen} = useScreenSize()
+const { isBigScreen } = useScreenSize()
+const animateResumeButton = ref(false)
+
+const highlightResume = () => {
+    animateResumeButton.value = true
+    window.location = '#download'
+}
+
+watchEffect(() => {
+    if (animateResumeButton.value) {
+        setTimeout(() => {            
+            window.onscroll = () => {
+                animateResumeButton.value = false
+            }
+        }, 0);
+    }
+})
 </script>

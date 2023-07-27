@@ -1,17 +1,17 @@
 <template>
-    <div class="">
-        <div class="text-white leading-7 min-h-[300px] grid place-content-center text-center w-[90%] max-w-[550px] m-auto">
-            <div ref="imgContainer" class="">
-                <div ref="" class="grid hover:drop-shadow-2xl rounded-full justify-center w-fit m-auto bg-slate-500 transition-all duration-500 hover:bg-slate-800 p-5 hover:scale-[90%]">
-                    <img ref="img" class="w-24 transition-all duration-500" src="../../public/muslim_man.svg" alt="">
-                </div>
+    <div class="min-h-fit text-center w-fit m-auto pb-5 pt-[60px]">
+        <div ref="imgContainer" class="">
+            <div ref="" class="grid hover:drop-shadow-2xl self-baseline rounded-full justify-center w-fit m-auto bg-slate-500 transition-all duration-500 hover:bg-slate-800 p-5 hover:scale-[90%]">
+                <img ref="img" class="w-24 transition-all duration-500" src="../../public/muslim_man.svg" alt="">
             </div>
         </div>
     </div>
+    <aboutComponent />
 </template>
 
 <script setup>
-import {ref, watchEffect, onMounted} from 'vue'
+import { ref, watchEffect, onMounted } from 'vue'
+import aboutComponent from './aboutComponent.vue'
 
 const lastScrollPosition = ref(0)
 const imgContainer = ref(null)

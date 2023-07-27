@@ -1,19 +1,16 @@
 <template>
     <div id="projects" class="md:pb-20">
         <div class="h-24 w-full"></div>
-        <h1 class="text-center font-mono text-3xl text-white font-bold md:text-5xl pb-5 md:pb-10">PROJECTS</h1>
-
+        <h1 class="text-center font-mono text-3xl font-bold md:text-5xl dark:text-white pb-5 md:pb-10">PROJECTS</h1>
 
         <div
-        :class="{'max-w-[90%] w-fit flex flex-wrap justify-center gap-10 m-auto': isBigScreen,
-        'grid justify-center' : midScreen}" class="">
+        :class="{'w-fit flex flex-wrap gap-5 m-auto': isBigScreen}" class="">
             <projectComponent
             v-for="(project, index) in projects" 
             :index="index" 
             :key="index" 
             :project="project" />
         </div>
-
     </div>
 </template>
 
