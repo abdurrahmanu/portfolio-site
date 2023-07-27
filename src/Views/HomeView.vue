@@ -4,8 +4,8 @@
 </template>
 
 <script setup>
-import desktopView from './desktopView.vue';
-import MobileView from './mobileView.vue'
+import desktopView from './DesktopView.vue';
+import MobileView from './MobileView.vue'
 import {ref, watchEffect} from 'vue'
 
 const isDarkMode = ref(false)
