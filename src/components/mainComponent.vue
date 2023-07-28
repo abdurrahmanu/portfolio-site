@@ -1,16 +1,13 @@
 <template>
     <NavBar 
-    @highlight-resume="highlightResume"
-    @contact-modal="showContactModal = true"
-    />
+    @contact-modal="showContactModal = true" />
     <mainTab />
     <skillsComponent />
-    <downloadButton
-    :animateResumeButton="animateResumeButton" /> 
+    <downloadButton /> 
     <UseModalComponent 
-    @closeModal="closeModal"
-    :showContactModalDelay="showContactModalDelay"
-    :showContactModal="showContactModal">
+    @false="closeModal"
+    :toggleDelay="showContactModalDelay"
+    :toggle="showContactModal">
         <footComponent />
     </UseModalComponent>
 </template>
@@ -26,12 +23,6 @@ import UseModalComponent from './useModalComponent.vue';
 
 const showContactModal = ref(false)
 const showContactModalDelay = ref(false)
-const animateResumeButton = ref(false)
-
-const highlightResume = () => {
-    animateResumeButton.value = true
-    window.location = '#download'
-}
 
 const closeModal = () => {
     showContactModal.value = false
@@ -53,14 +44,6 @@ watchEffect(() => {
         window.onscroll = () => {
             
         }
-    }
-
-    if (animateResumeButton.value) {
-        setTimeout(() => {            
-            window.onscroll = () => {
-                animateResumeButton.value = false
-            }
-        }, 0);
     }
 })
 

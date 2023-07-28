@@ -1,6 +1,6 @@
 <template>
     <div class="w-fit">
-        <div class="rounded-full dark:bg-white bg-slate-200 w-fit m-auto">
+        <div class="rounded-full border-2 border-black bg-slate-300 w-fit m-auto">
             <div class="grid w-fit m-auto justify-center p-2">
                 <img class="w-6 md:w-8" :src="svg + '.svg'" alt="">
             </div>
@@ -18,7 +18,5 @@ const props = defineProps({
     skill: String,
     svg: String,
 })
-
-
 
 </script>

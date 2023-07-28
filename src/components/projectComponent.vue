@@ -1,7 +1,6 @@
 <template>
-  <div class="relative max-w-[400px] w-[90%] m-auto" :class="{'pb-10': !isBigScreen}">
-    <div class="w-[90%] max-w-[400px] border md:w-full md:max-w-full m-auto h-fit relative bg-zinc-900 border-slate-600 z-20 rounded-md p-1">
-
+  <div class="relative w-fit m-auto">
+    <div class="w-[320px] px-2 m-auto h-fit relative bg-slate-700 dark:bg-zinc-900 rounded-md p-1">
       <div class="flex items-center justify-between px-2">
         <p class="uppercase md:text-center text-xs md:text-base text-white"><span class="text-white font-mono font-black">{{ index + 1 }}. </span>{{project.name}}</p>
           <div class="uppercase text-center font-light text-white text-xs py-4">
@@ -10,7 +9,7 @@
           </div>
         </div>
 
-      <div class="max-w-full w-[95%] h-[100px] p-3 text-center rounded-tl-[10px] rounded-br-[10px] rounded-md transition-all duration-75 m-auto bg-slate-200 min-h-[200px]">
+      <div class="max-w-full w-[95%] p-3 text-center rounded-md m-auto bg-slate-200 min-h-[200px]">
       </div>
 
       <div class="flex flex-wrap m-auto gap-3 p-3 justify-center">

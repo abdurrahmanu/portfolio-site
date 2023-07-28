@@ -1,5 +1,5 @@
 <template>
-    <div id="home" class="dark:bg-neutral-900 bg-white  pt-16" v-if="!isBigScreen">
+    <div id="home" class="dark:bg-neutral-900 bg-slate-200 pt-[114px]" v-if="!isBigScreen">
         <mainComponent />
         <MyProjects />
         <CopyrightComponent />

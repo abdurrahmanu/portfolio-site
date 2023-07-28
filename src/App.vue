@@ -4,9 +4,6 @@ import HomeView from './Views/HomeView.vue';
 import {ref, watchEffect} from 'vue'
 
 const toggleDarkMode = ref(false)
-watchEffect(() => {
-  console.log(toggleDarkMode.value);
-})
 </script>
 
 <template>
