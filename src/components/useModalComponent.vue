@@ -10,7 +10,7 @@
         <Transition appear name="message">
             <div
             v-if="toggleDelay" 
-            class="z-[999999] fixed bottom-0 w-full dark:bg-neutral-900 bg-white h-[calc(100vh_-_150px)]">
+            class="z-[999999] fixed bottom-0 w-full dark:bg-neutral-900 bg-slate-300 h-[calc(100vh_-_150px)]"> 
                 <div 
                 @click="closeModal" 
                 :class="[toggle ? 'text-white' : 'text-red-400']" 

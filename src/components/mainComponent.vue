@@ -8,7 +8,7 @@
     @false="closeModal"
     :toggleDelay="showContactModalDelay"
     :toggle="showContactModal">
-        <footComponent />
+        <footComponent :toggle="showContactModal" />
     </UseModalComponent>
 </template>
 

@@ -1,5 +1,5 @@
 <template>
-    <code v-if="direction === 'left'" class="italic relative text-black">
+    <code v-if="direction === 'left'" class="italic text-sm relative text-black">
         <p @click="$emit('close')" class="w-fit absolute text-xl right-3 top-1">x</p>
         <p class="pl-2 text-center text-lg py-1 font-bold">VUE</p>
         <p class="pl-2 py-1">
@@ -20,7 +20,7 @@
             <span>createApp(App).mount('#app')</span>
         </p>
     </code>
-    <code v-if="direction === 'right'" class="italic text-black">
+    <code v-if="direction === 'right'" class="italic text-sm text-black">
         <p @click="$emit('close')" class="w-fit absolute text-xl right-3 top-1">x</p>
         <p class="pl-2 text-center text-lg py-1 font-bold">JAVASCRIPT</p>
         <p class="py-1 pl-2">

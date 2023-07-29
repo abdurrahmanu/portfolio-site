@@ -1,7 +1,6 @@
 <template>
     <div
-    :class="[imagePutInPlace ? 'pr-20' : 'delay-500 gap-0']"
-    class="fixed top-[7px] bg-white border-2 border-slate-600 transition-all duration-200 left-[5px] w-fit rounded-full rounded-l-none flex z-50 p-1 pr-10 pl-5 justify-center m-auto">
+    class="fixed top-[7px] bg-white dark:shadow-none shadow-md shadow-black border-2 border-slate-600 transition-all duration-200 left-[5px] w-fit rounded-full rounded-l-none flex z-50 p-1 pr-10 pl-5 justify-center m-auto">
     <div class="flex gap-1">
         <div
         @click="clicked(item)"
@@ -32,23 +31,11 @@ const { verySmall } = useScreenSize()
 const svgs = ['home', 'pen', 'document', 'contact']
 const nav = ['Home', 'Projects', 'Resume', 'Contact',]
 const choice = ref('home')
-const imagePutInPlace = ref(false)
-const lastScrollPosition = ref(null)
 
 //Tooltip usage
 
 //...................................
 
-window.addEventListener('scroll', e => {
-    lastScrollPosition.value = pageYOffset;
-    watchEffect(() => {
-        if (lastScrollPosition.value > 170) {
-            imagePutInPlace.value = true
-        } else {
-            imagePutInPlace.value = false
-        }
-    });
-})
 
 const clicked = (item) => {
     choice.value = item.toLowerCase()

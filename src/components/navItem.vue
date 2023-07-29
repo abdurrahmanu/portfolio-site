@@ -5,7 +5,7 @@
         </div>
     </div>
     <usePushNotification @false="toggleResume($event)" :toggle="ModalWarning">
-        <div class="w-[400px] bg-slate-300 text-black p-4">
+        <div class="w-[100%] max-w-[400px] bg-slate-300 text-black p-4">
             <p class="text-center text-xs p-3">YOU WILL BE REDIRECTED TO VIEW MY RESUME</p>
             <div class="flex gap-7 w-fit p-1 m-auto">
                 <div class="text-center">
@@ -52,7 +52,7 @@ const route = (arg) => {
     if (arg === 'Contact') {
         emit('contact-modal');
     } else if (arg === 'Github') {
-        window.open('https://github/abdurrahmanu', '_blank')
+        window.open('https://github.com/abdurrahmanu', '_blank')
     } else if (arg !== 'Resume') {
         idLink.value = '#' + arg.toLowerCase()
         window.location = idLink.value

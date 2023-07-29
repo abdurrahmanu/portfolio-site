@@ -1,5 +1,5 @@
 <template>
-    <div id="projects" class="dark:bg-[url('../public/black-with-white-crack.png')] bg-repeat bg-[url('../public/white-with-black-crack.png')] " :class="[!flexContainer ? 'md:pb-20' : '']">
+    <div id="projects" class="dark:bg-[url('../../public/black-with-white-crack.png')] bg-repeat bg-[url('../../public/white-with-black-crack.png')] py-3" :class="[!flexContainer ? 'md:pb-20' : '']">
         <div class="h-24 w-full"></div>
         <h1 class="text-center font-mono text-3xl font-bold md:text-5xl dark:text-white pb-5 md:pb-10">PROJECTS</h1>
         <div class="flex w-fit m-auto items-center p-3 gap-8">

@@ -2,10 +2,12 @@ import { onMounted, ref, watchEffect } from 'vue';
 
 export function useScreenSize(size) {
     const isBigScreen = ref(false);
+    const xxlScreen = ref(false)
     const verySmall = ref(false)
     const midScreen = ref(false)
     const xtraSmall = ref(false)
     const midSmall = ref(false)
+    const midBigScreen = ref(false)
     const smallScreen = 600;
 
     window.addEventListener('resize', () => {
@@ -14,6 +16,7 @@ export function useScreenSize(size) {
         xtraSmall.value = innerWidth < 180
         midScreen.value = innerWidth < 415
         midSmall.value = innerWidth < 380
+        xxlScreen.value = innerWidth > 1220
     });
 
     onMounted(() => {
@@ -22,9 +25,11 @@ export function useScreenSize(size) {
             xtraSmall.value = innerWidth < 180
             midScreen.value = innerWidth < 415
             midSmall.value = innerWidth < 380
+            xxlScreen.value = innerWidth > 1220
+
         });
 
-    return { isBigScreen, verySmall, xtraSmall, midScreen, midSmall };
+    return { isBigScreen, verySmall, xtraSmall, midScreen, midSmall, midBigScreen, xxlScreen };
 } 
 
 

@@ -10,10 +10,12 @@
         @click="clicked(item)"
         class="transition-all relative duration-75 border-b-4" 
         :class="[item.toLowerCase() ===  choice ? 'border-gray-500' : 'border-transparent', item === 'Resume' ? 'lg:hidden lg:absolute lg:top-10' : 'block relative top-0']" v-for="(item, index) in nav" :key="index">
+        <!-- <UseToolTipNotification> -->
             <navItem
             size="large"
             :svg="svgs[index]" 
             :item="item" />
+        <!-- </UseToolTipNotification> -->
         </div>
     </div>
 </template>
@@ -22,9 +24,8 @@
 import {ref, defineEmits} from 'vue'
 import navItem from './navItem.vue'
 import downloadButton from './downloadButton.vue'
-import { useScreenSize } from '../composables/useScreenSize';
+import UseToolTipNotification from './useToolTipNotification.vue';
 
-const {isBigScreen} = useScreenSize()
 const svgs = ['home', 'pen', 'document', 'github']
 const nav = ['Home', 'Projects', 'Resume','Github'];
 const choice = ref('home')
