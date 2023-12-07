@@ -1,7 +1,7 @@
 <template>
     <div class="pl-7">
         <div class="container">
-            <img ref="img" class="avatar" src="muslim_man.svg">
+            <img ref="img" class="avatar" src="/muslim_man.svg">
         </div>
     </div>
 </template>

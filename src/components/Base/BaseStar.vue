@@ -1,7 +1,7 @@
 <template>
     <img 
     class="absolute z-[999] animate-pulse w-4"
-    src="../../assets/WhiteStar.png">
+    src="/WhiteStar.png">
 </template>                                                                     
 
 <script setup>

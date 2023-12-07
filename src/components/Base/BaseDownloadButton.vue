@@ -4,9 +4,9 @@
             <div @click="downloadResume" class="hidden screen-xs:block text-sm text-center py-2 p-2">Download</div>
             <div class="button-border">
                 <button @click="downloadResume" class="button">
-                    <img class="w-5 z-10 block screen-xs:hidden" src="programmer.svg" /> 
+                    <img class="w-5 z-10 block screen-xs:hidden" src="/programmer.svg" /> 
                     <span class="button-text block screen-xs:hidden">Download Resume</span> 
-                    <img class="w-4 -rotate-90" src="arrow.svg" /> 
+                    <img class="w-4 -rotate-90" src="/arrow.svg" /> 
                 </button>
             </div>
         </div>

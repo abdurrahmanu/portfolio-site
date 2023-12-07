@@ -20,7 +20,7 @@
                     :key="index" 
                     class="flex gap-2 relative p-2 py-2 items-center border-b dark:border-neutral-300 border-slate-300 hover:bg-slate-300">
                         <div class="p-1 rounded-full bg-white border border-slate-400">
-                            <!-- <img class="w-5 h-6 rounded-full" src="avatar.svg" alt=""> -->
+                            <img class="w-5 h-6 rounded-full" src="/avatar.svg" alt="">
                         </div>
                         <div class="p-1 m-auto max-w-[500px] w-[90%] text-xs">{{message.message}}</div>
                         <div v-if="showDeleteBtn" class="text-xs absolute right-[5px] top-[50%] translate-y-[-50%]">del</div>
@@ -31,15 +31,15 @@
 
             <div class="flex uppercase text-[10px] gap-10 w-[85%] py-2 m-auto justify-around"> 
                 <div class="">
-                    <!-- <img class="w-5 h-5" src="message.svg" alt=""> -->
+                    <img class="w-5 h-5" src="/message.svg" alt="">
                     <div class="text-center">{{ allSiteReviews.messages }}</div>
                 </div>
                 <div class="">
-                    <!-- <img class="w-7 h-5" src="LoveTransparent.svg" alt=""> -->
+                    <img class="w-7 h-5" src="/LoveTransparent.svg" alt="">
                     <div class="text-center">{{allSiteReviews.likes}}</div>
                 </div>
                 <div class="">
-                    <!-- <img class="w-7 h-5" src="LoveTransparent.svg" alt=""> -->
+                    <img class="w-7 h-5" src="/LoveTransparent.svg" alt="">
                     <div class="text-center">{{allSiteReviews.views}}</div>
                 </div>
             </div>
@@ -51,7 +51,7 @@
             <div v-if="writeMessage" class="w-[90%] mt-2 m-auto  py-1 max-w-[500px]">
                 <div class="flex items-center relative w-[90%] max-w-[400px] m-auto gap-5">
                     <input ref="messageInputRef" type="text" v-model="newMessage" class="rounded-full dark:text-black text-xs p-1 pl-5 w-full outline-none">
-                    <!-- <img @click="sendMessage" class="w-5 h-5 rotate-[40deg]" src="sendBtn.svg" /> -->
+                    <img @click="sendMessage" class="w-5 h-5 rotate-[40deg]" src="/sendBtn.svg" />
                 </div>
                 <div class="pl-5 py-1 w-fit text-xs">
                     <p class="py-2 font-mono">ADD IMAGE FROM GALLERY...</p>

@@ -3,7 +3,7 @@
     <div class="svgs-container">
         <div @click="go(index)" class="svg" v-for="(svgName, index) in svgsNames" 
         :key="index">
-            <img class="w-7 md:w-10" :src="`${svgName}.svg`" alt="">
+            <img class="w-7 md:w-10" :src="`/${svgName}.svg`" alt="">
         </div>
     </div>
     <Copyright />
