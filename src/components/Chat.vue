@@ -35,11 +35,11 @@
                     <div class="text-center">{{ allSiteReviews.messages }}</div>
                 </div>
                 <div class="">
-                    <img class="w-7 h-5" src="LoveTransparent.svg" alt="">
+                    <!-- <img class="w-7 h-5" src="LoveTransparent.svg" alt=""> -->
                     <div class="text-center">{{allSiteReviews.likes}}</div>
                 </div>
                 <div class="">
-                    <img class="w-7 h-5" src="LoveTransparent.svg" alt="">
+                    <!-- <img class="w-7 h-5" src="LoveTransparent.svg" alt=""> -->
                     <div class="text-center">{{allSiteReviews.views}}</div>
                 </div>
             </div>
@@ -51,7 +51,7 @@
             <div v-if="writeMessage" class="w-[90%] mt-2 m-auto  py-1 max-w-[500px]">
                 <div class="flex items-center relative w-[90%] max-w-[400px] m-auto gap-5">
                     <input ref="messageInputRef" type="text" v-model="newMessage" class="rounded-full dark:text-black text-xs p-1 pl-5 w-full outline-none">
-                    <img @click="sendMessage" class="w-5 h-5 rotate-[40deg]" src="sendBtn.svg" />
+                    <!-- <img @click="sendMessage" class="w-5 h-5 rotate-[40deg]" src="sendBtn.svg" /> -->
                 </div>
                 <div class="pl-5 py-1 w-fit text-xs">
                     <p class="py-2 font-mono">ADD IMAGE FROM GALLERY...</p>
