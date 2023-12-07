@@ -1,19 +1,16 @@
 <script setup>
-import changeBgModeComponent from './components/changeBgModeComponent.vue'
 import HomeView from './Views/HomeView.vue';
-import {ref} from 'vue'
-
-const toggleDarkMode = ref(false)
+import { useDarkMode } from '../src/store/useDarkMode'
+const darkMode = useDarkMode()
 </script>
 
 <template>
-  <div :class="[toggleDarkMode ? 'dark' : '']">
-    <changeBgModeComponent @toggleDarkMode="toggleDarkMode = $event" />
-    <HomeView />
-  </div>
+    <div 
+    :class="[darkMode.toggleDarkMode]" 
+    class="bg-neutral-600">
+        <HomeView />
+    </div>
 </template>
-
-
 
 
 

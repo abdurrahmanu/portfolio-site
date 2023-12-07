@@ -1,26 +1,28 @@
 <template>
-        <div id="home"></div>
-        <MobileView />
-        <desktopView />
+    <div 
+    class="home">
+        <BaseHeader />
+        <MainContent />
+        <Projects />
+        <BaseFooter />
+        <Chat />
+    </div>
 </template>
 
 <script setup>
-import desktopView from './DesktopView.vue';
-import MobileView from './MobileView.vue';
-import { ref, watchEffect } from 'vue';
-
-
-
-
-
-
-
-
-
-
-const isDarkMode = ref(false)
+import Chat from '../components/Chat.vue';
+import Projects from '../components/Projects/projectsComponents.vue';
+import BaseHeader from '../components/Base/BaseHeader.vue'
+import BaseFooter from '../components/Base/BaseFooter.vue';
+import MainContent from '../components/MainContent.vue';
+import ClickMe from '../components/ClickMe.vue';
 </script>
 
+<style scoped> 
+.home {
+    @apply bg-slate-200 dark:bg-neutral-900 max-w-[1200px] mx-auto relative
+}
+</style>
 
 
 
