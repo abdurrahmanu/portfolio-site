@@ -15,7 +15,7 @@
 <script setup>
 import { ref } from 'vue';
 import usePushNotification from '../useComponents/usePushNotification.vue'
-import PushNOtificationForResume from '../PushNOtificationForResume.vue'
+import PushNOtificationForResume from '../PushNotificationForResume.vue'
 
 const togglePushNotfication = ref(false)
 const openResume = ref(false)
