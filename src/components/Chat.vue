@@ -20,7 +20,7 @@
                     :key="index" 
                     class="flex gap-2 relative p-2 py-2 items-center border-b dark:border-neutral-300 border-slate-300 hover:bg-slate-300">
                         <div class="p-1 rounded-full bg-white border border-slate-400">
-                            <img class="w-5 h-6 rounded-full" src="message.svg" alt="">
+                            <img class="w-5 h-6 rounded-full" src="/message.svg" alt="">
                         </div>
                         <div class="p-1 m-auto max-w-[500px] w-[90%] text-xs">{{message.message}}</div>
                         <div v-if="showDeleteBtn" class="text-xs absolute right-[5px] top-[50%] translate-y-[-50%]">del</div>
