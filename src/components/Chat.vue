@@ -31,7 +31,7 @@
 
             <div class="flex uppercase text-[10px] gap-10 w-[85%] py-2 m-auto justify-around"> 
                 <div class="">
-                    <img class="w-5 h-5" src="message.svg" alt="">
+                    <!-- <img class="w-5 h-5" src="message.svg" alt=""> -->
                     <div class="text-center">{{ allSiteReviews.messages }}</div>
                 </div>
                 <div class="">
