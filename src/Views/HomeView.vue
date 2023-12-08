@@ -15,7 +15,6 @@ import Projects from '../components/Projects/projectsComponents.vue';
 import BaseHeader from '../components/Base/BaseHeader.vue'
 import BaseFooter from '../components/Base/BaseFooter.vue';
 import MainContent from '../components/MainContent.vue';
-import ClickMe from '../components/ClickMe.vue';
 </script>
 
 <style scoped> 

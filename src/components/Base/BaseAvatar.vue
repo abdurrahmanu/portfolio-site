@@ -11,7 +11,7 @@
 
 <style scoped>
 .container {
-    @apply inline-block dark:bg-slate-500 dark:shadow-black shadow-md bg-gray-200 hover:drop-shadow-2xl rounded-full w-fit m-auto transition-all duration-500 p-7 screen-big:p-9 hover:scale-[90%]
+    @apply inline-block dark:bg-slate-500 dark:shadow-black shadow-zinc-900 shadow-md bg-white hover:drop-shadow-2xl rounded-full w-fit m-auto transition-all duration-500 p-7 screen-big:p-9 hover:scale-[90%]
 }
 
 .avatar {
