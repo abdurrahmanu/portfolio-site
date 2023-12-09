@@ -2,6 +2,15 @@
     <div class="dark:bg-neutral-900">
 
         <div class="main-style">
+            <div class="flex gap-[20px] p-3 text-3xl font-mono text-white justify-center uppercase">
+                <div>
+                    <span class="px-[1px] animate-pulse transition-all duration-75" v-for="(letter, index) in firstName" :key="index">{{ letter }}</span>
+                </div>
+
+                <div>
+                    <span class="px-[1px] animate-pulse transition-all duration-75" v-for="(letter, index) in lastName" :key="index">{{ letter }}</span>
+                </div>
+            </div>
             <div class="about-style">
                 <BaseAvatar />
                 <AboutMe />
@@ -18,6 +27,9 @@ import AboutMe from './AboutMe.vue';
 import BaseAvatar from './Base/BaseAvatar.vue';
 import BaseDownloadButton from './Base/BaseDownloadButton.vue';
 import skillsComponent from './Skills/skillsComponent.vue';
+
+const firstName = 'Abdulrahman'
+const lastName = 'Ahmed'
 </script>
 
 <style scoped>

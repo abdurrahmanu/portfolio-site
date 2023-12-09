@@ -12,7 +12,7 @@ const copyright = computed(() => `@Copyright ${new Date().getFullYear() }`)
 
 <style scoped>
 .container {
-    @apply py-6 md:bg-none dark:md:bg-none
+    @apply md:bg-none dark:md:bg-none m-auto pt-6
 }
 
 .copyright {

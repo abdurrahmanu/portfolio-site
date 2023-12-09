@@ -1,6 +1,11 @@
 <template>
+    <windowClick
+    multi
+    :number="4"
+    target="effect-this" />
+
     <div class="sticky top-0 left-0 z-[9999]">
-        <div class="header">
+        <div id="this" class="header">
             <DownloadButton 
             class="download-button" 
             size="large" />
@@ -17,6 +22,7 @@
 
 <script setup>
 import { ref } from 'vue' 
+import windowClick from '../windowClick/windowClick.vue'
 import { BaseNavbar } from '../../composables/componentsImports';
 import BaseBgToggleButton from './BaseBgToggleButton.vue';
 import DownloadButton from '../Base/BaseDownloadButton.vue'
@@ -26,7 +32,7 @@ const currentNavigation = ref('Home')
 
 <style scoped>
 .header {
-    @apply flex justify-center bg-slate-400 shadow w-full
+    @apply flex justify-center bg-sky-900 shadow w-full
 }
 
 .header-style {
