@@ -51,11 +51,11 @@ const submit = (e) => {
 }
 
 .message-header {
-    @apply font-mono dark:text-white text-zinc-500 pb-2 pl-5 text-xl md:text-center underline
+    @apply font-mono dark:text-white text-zinc-500 pb-2 pl-10 text-3xl md:text-center underline
 }
 
 .text-area {
-    @apply p-2 py-2 dark:bg-zinc-800 dark:text-white bg-white max-w-[500px] w-[90%] m-auto outline-none border-2 dark:border dark:border-gray-400 border-black rounded-md min-h-[200px]
+    @apply p-2 py-2 dark:bg-zinc-800 dark:text-white bg-white max-w-[500px] w-[90%] m-auto outline-none border-2 dark:border dark:border-gray-400 border-black rounded-md min-h-[200px] text-2xl
 }
 
 .submit-button-container {
@@ -63,7 +63,7 @@ const submit = (e) => {
 }
 
 .submit-button {
-    @apply rounded-full py-3 w-[80%] text-white text-center m-auto bg-black p-1 md:p-3 hover:text-white px-16 uppercase text-sm gap-2 dark:bg-neutral-800 shadow
+    @apply rounded-full py-3 w-[80%] text-white text-center m-auto bg-black p-1 md:p-3 hover:text-white px-16 uppercase gap-2 dark:bg-neutral-800 shadow text-xl
 }
 
 

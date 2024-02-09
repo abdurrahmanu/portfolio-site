@@ -1,8 +1,7 @@
 <template>
-    <div id="projects" class="py-8 sm:py-10 max-w-[1200px] m-auto dark:bg-neutral-900">
+    <div id="projects" class="py-8 sm:py-10 dark:bg-neutral-900 w-fit m-auto">
         <h1 class="heading">PROJECTS</h1>
-        <div
-        class="projects">
+        <div class="projects">
             <projectComponent
             @closeProjectImage="closeProject"
             @openProjectImage="projects[index].openImage = true"
@@ -85,6 +84,6 @@ const closeProject = () => {
 }
 
 .projects {
-    @apply m-auto md:flex flex-wrap relative grid gap-6 transition-all duration-700 
+    @apply md:grid-cols-3 grid gap-6 
 }
 </style>

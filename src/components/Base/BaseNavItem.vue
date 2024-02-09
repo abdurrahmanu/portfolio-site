@@ -1,9 +1,10 @@
 <template>
     <div 
     @click="route(item)" 
-    class="nav-style">
+    class="relative hover:text-black font-mono">
         {{ item }}
     </div>
+    
     <usePushNotification 
     @false="toggleResume($event)" 
     :toggle="togglePushNotfication">
@@ -45,14 +46,6 @@ const route = (arg) => {
 }
 
 </script>
-
-<style scoped>
-.nav-style {
-    @apply relative hover:text-slate-200 font-mono
-}
-
-</style>
-
 
 
 

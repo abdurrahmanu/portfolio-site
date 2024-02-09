@@ -7,7 +7,6 @@
 </template>
 
 <script setup>
-import { onBeforeMount } from 'vue'
 import { useDarkMode } from '../../store/useDarkMode'
 
 const darkmodeStore = useDarkMode()
@@ -16,10 +15,6 @@ const toggle = () => {
     darkmodeStore.darkMode = !darkmodeStore.darkMode
     localStorage.setItem('portfolioBgMode', darkmodeStore.darkMode)
 }
-
-onBeforeMount(() => {
-    darkmodeStore.checkLocalStorageForSavedBackground()
-})
 </script>
 
 <style scoped>

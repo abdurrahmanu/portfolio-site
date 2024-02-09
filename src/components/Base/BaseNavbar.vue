@@ -1,10 +1,10 @@
 <template>
-    <div class="nav">
+    <div class="flex gap-10 md:gap-14 lg:gap-17  text-black text-2xl md:text-3xl">
         <div 
         :key="index"
         @click="navigateFunction(item)"
         v-for="(item, index) in navItems" 
-        :class="[currentNavigation === item ? 'current-nav': '']">
+        :class="[currentNavigation === item ? 'border-b border-black text-black': '']">
             <BaseNavItem :item="item" />
         </div>
     </div>
@@ -26,12 +26,4 @@ const navItems = ['Home', 'Projects', 'Resume', 'Github']
 </script>
 
 <style scoped>
-.nav {
-    @apply flex gap-4 md:gap-7 lg:gap-9 text-sm text-black sm:text-base lg:text-[14px]
-}
-
-.current-nav {
-    @apply border-b border-slate-200 text-slate-200
-}
-
 </style>

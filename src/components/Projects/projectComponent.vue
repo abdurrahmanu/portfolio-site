@@ -16,7 +16,7 @@
           </div>
         </div>
     </div>
-    <Transition name="open">
+    <!-- <Transition name="open">
       <div v-if="openImage" class=" z-[99] bg-white shadow rounded-md rounded-t-none p-2">
         <div>
           Lorem ipsum, dolor sit amet consectetur adipisicing elit. Odit cupiditate assumenda sunt culpa eligendi quia placeat ullam, cumque nesciunt quae?
@@ -28,7 +28,7 @@
           :skill="skill" />
         </div>
       </div>
-    </Transition>
+    </Transition> -->
   </div>
 </template>
 
