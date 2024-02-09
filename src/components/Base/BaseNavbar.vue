@@ -1,5 +1,5 @@
 <template>
-    <div class="flex gap-10 md:gap-14 lg:gap-17  text-black text-2xl md:text-3xl">
+    <div class="flex gap-10 md:gap-14 lg:gap-17  text-black text-base md:text-3xl">
         <div 
         :key="index"
         @click="navigateFunction(item)"
