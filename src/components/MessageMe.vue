@@ -3,13 +3,13 @@
     class="main-container">
         <div class="message-container">
             <div class="grid md:p-4">
-                <p class="message-header">SEND A MESSAGE</p>
                 <div class="max-w-[600px] w-[100%] m-auto">
+                    <p class="font-mono dark:text-white text-zinc-500 pb-2 w-[90%] m-auto text-sm sm:text-base md:text-lg md:text-center underline">SEND A MESSAGE</p>
                     <div class="md:pt-4 pt-0 text-center">
                         <textarea  
                         :placeholder="textareaPlaceholder" 
                         v-model="message" 
-                        class="text-area"
+                        class="p-2 py-2 dark:bg-zinc-800 dark:text-white bg-white shadow shadow-black max-w-[500px] w-[90%] m-auto outline-none rounded-md min-h-[200px] text-sm sm:text-base"
                         cols="30" 
                         rows="4"></textarea>
                     </div>
@@ -50,20 +50,12 @@ const submit = (e) => {
     @apply relative m-auto dark:bg-neutral-900
 }
 
-.message-header {
-    @apply font-mono dark:text-white text-zinc-500 pb-2 pl-10 text-3xl md:text-center underline
-}
-
-.text-area {
-    @apply p-2 py-2 dark:bg-zinc-800 dark:text-white bg-white max-w-[500px] w-[90%] m-auto outline-none border-2 dark:border dark:border-gray-400 border-black rounded-md min-h-[200px] text-2xl
-}
-
 .submit-button-container {
     @apply p-[2px] w-full m-auto rounded-full relative text-center py-6
 }
 
 .submit-button {
-    @apply rounded-full py-3 w-[80%] text-white text-center m-auto bg-black p-1 md:p-3 hover:text-white px-16 uppercase gap-2 dark:bg-neutral-800 shadow text-xl
+    @apply rounded-full py-3 w-[80%] text-slate-300 hover:bg-gray-900 text-center m-auto bg-black p-1 md:p-3 hover:text-white px-16 uppercase dark:bg-neutral-800 text-xs sm:text-base
 }
 
 

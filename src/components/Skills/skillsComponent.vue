@@ -1,8 +1,8 @@
 <template>
     <div class="max-w-[700px] relative py-7 sm:py-12 m-auto">
-        <p class="text-center font-bold font-mono text-black text-3xl md:text-5xl py-5">SKILLS</p>
+        <p class="text-center font-bold font-mono text-black text-xl md:text-3xl py-5 dark:text-slate-200">SKILLS</p>
         <div
-            class=" flex flex-wrap w-fit px-5 sm:px-2 justify-center bg-white shadow-md shadow-gray-600 rounded-full gap-6 lg:gap-8 py-3 m-auto screen-small:grid max-w-[95%]">
+            class=" flex flex-wrap w-fit px-5 sm:px-2 justify-center screen-small:bg-transparent screen-small:shadow-none bg-white shadow-md shadow-gray-600 dark:shadow-black  rounded-full gap-3 lg:gap-6 py-3 m-auto max-w-[95%]">
             <skillComponent 
             v-for="(svg, index) in svgs" 
             :svg="svg"

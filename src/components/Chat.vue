@@ -1,6 +1,6 @@
 <template>
-    <div v-if="!showMessages" @click="showMessages = true" class="ml-4 md:w-[70px] md:h-[70px] w-[60px] h-[60px] shadow-md sticky z-[999] bottom-6 left-4 shadow-zinc-400 grid place-content-center bg-white rounded-full rounded-bl-none dark:text-slate-400 dark:bg-neutral-600 dark:shadow-black">
-        <div class="text-center text-[13px] md:text-base p-2">CHAT</div>
+    <div v-if="!showMessages" @click="showMessages = true" class="ml-4 md:w-[50px] md:h-[50px] w-[40px] h-[40px] shadow-md sticky z-[999] bottom-6 left-4 shadow-zinc-400 grid place-content-center bg-white rounded-full rounded-bl-none dark:text-slate-400 dark:bg-neutral-600 dark:shadow-black">
+        <div class="text-center text-[10px] md:text-base p-2 dark:text-slate-200">CHAT</div>
     </div>
 
     <useModalComponent
@@ -25,7 +25,6 @@
                         <div class="p-1 m-auto max-w-[500px] w-[90%] text-xs">{{message.message}}</div>
                         <div v-if="showDeleteBtn" class="text-xs absolute right-[5px] top-[50%] translate-y-[-50%]">del</div>
                     </div>
-                    <!-- after:w-2 after:h-2 after:bg-black after:rounded-full after:absolute after:left-[-5px] after:top-[50%] after:translate-y-[50%] -->
                 </div>
             </div>
 

@@ -1,7 +1,8 @@
 <template>
     <div id="projects" class="py-8 sm:py-10 dark:bg-neutral-900 w-fit m-auto">
-        <h1 class="heading">PROJECTS</h1>
-        <div class="projects">
+        <h1 class="text-center font-mono text-xl font-bold md:text-2xl dark:text-slate-300 pb-5 md:pb-10
+">PROJECTS</h1>
+        <div class="pmd:grid-cols-3 grid gap-6 rojects">
             <projectComponent
             @closeProjectImage="closeProject"
             @openProjectImage="projects[index].openImage = true"
@@ -77,13 +78,3 @@ const closeProject = () => {
 }
 
 </script>
-
-<style scoped>
-.heading {
-    @apply text-center font-mono text-3xl font-bold md:text-5xl dark:text-slate-300 pb-5 md:pb-10
-}
-
-.projects {
-    @apply md:grid-cols-3 grid gap-6 
-}
-</style>

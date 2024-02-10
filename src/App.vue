@@ -14,9 +14,7 @@ onBeforeMount(() => {
 </script>
 
 <template>
-    <div 
-    :class="[toggleDarkMode]" 
-    class="bg-neutral-600">
+    <div :class="[toggleDarkMode]" >
         <HomeView />
     </div>
 </template>

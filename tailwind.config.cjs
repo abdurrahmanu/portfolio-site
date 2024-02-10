@@ -20,7 +20,7 @@ module.exports = {
       screens: {
         'screen-xs': { 'max': '180px' },
         'screen-mid-small': { 'max': '380px' },
-        'screen-small': { 'max': '210px' },
+        'screen-small': { 'max': '230px' },
         'screen-md': { 'max': '415px' },
         'screen-3xl': { 'min': '1225px' },
         'screen-big': {'min': '600px'}
