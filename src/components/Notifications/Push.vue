@@ -1,5 +1,5 @@
 <template>
-    <Teleport to="#modal">
+    <Teleport to="body">
         <div v-if="toggle" class="fixed z-[10] top-40 left-[50%] translate-x-[-50%] m-auto">
             <div>
                 <Transition name="width-increase">
@@ -9,7 +9,7 @@
                     <div v-if="topRigth" class="bg-red-500 h-[3px]  absolute right-0 w-[50%]"></div>
                 </Transition>
             </div>
-            <div class="m-auto text-4xl">
+            <div class="m-autol">
                 <slot />
             </div>
             <div>

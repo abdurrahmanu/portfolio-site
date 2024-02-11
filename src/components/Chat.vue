@@ -1,12 +1,15 @@
 <template>
-    <div v-if="!showMessages" @click="showMessages = true" class="ml-4 md:w-[50px] md:h-[50px] w-[40px] h-[40px] shadow-md sticky z-[999] bottom-6 left-4 shadow-zinc-400 grid place-content-center bg-white rounded-full rounded-bl-none dark:text-slate-400 dark:bg-neutral-600 dark:shadow-black">
+    <div class="ml-4 md:w-[50px] md:h-[50px] w-[40px] h-[40px] shadow-md sticky z-[999] bottom-6 left-4 shadow-zinc-400 grid place-content-center bg-white rounded-full rounded-bl-none dark:text-slate-400 dark:bg-neutral-600 dark:shadow-black">
         <div class="text-center text-[10px] md:text-base p-2 dark:text-slate-200">CHAT</div>
     </div>
+    
+    <!-- <div v-if="!showMessages" @click="showMessages = true" class="ml-4 md:w-[50px] md:h-[50px] w-[40px] h-[40px] shadow-md sticky z-[999] bottom-6 left-4 shadow-zinc-400 grid place-content-center bg-white rounded-full rounded-bl-none dark:text-slate-400 dark:bg-neutral-600 dark:shadow-black">
+        <div class="text-center text-[10px] md:text-base p-2 dark:text-slate-200">CHAT</div>
+    </div> -->
 
-    <useModalComponent
-    :toggleDelay="1000"
+    <!-- <Modal
     :toggle="showMessages"
-    @false="showMessages = false">
+    @close="showMessages = false">
 
     <div v-if="showMessages" class=" dark:text-slate-200 dark:bg-neutral-800 bg-slate-200 w-[90%] rounded-lg max-w-[500px] mt-2 m-auto p-4 py-6 fixed border border-slate-700 top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] ">
         <div class="text-right font-mono p-2 pt-0 absolute top-0 right-0"><span @click="showMessages = false">X</span></div>
@@ -62,12 +65,12 @@
             </div>
         </div>
 
-    </useModalComponent>
+    </Modal> -->
 </template>
 
 <script setup>
 import { ref, computed, onMounted } from 'vue'
-import useModalComponent from './useComponents/useModalComponent.vue'
+import Modal from './Notifications/Modal.vue'
 
 const showDeleteBtn = ref(false)
 const showMessages = ref(false)

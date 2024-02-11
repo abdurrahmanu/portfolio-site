@@ -1,5 +1,5 @@
 <template>
-    <div class="flex gap-3 md:gap-5  lg:gap-8 py-5  text-black  h-fit justify-center">
+    <div class="flex gap-3 md:gap-5  lg:gap-8 py-3  text-black  h-fit justify-center">
         <div 
         :key="index"
         @click="navigateFunction(item)"
@@ -22,8 +22,5 @@ const navigateFunction = (item) => {
     emit('currentNav', item)
 }
 
-const navItems = ['Home', 'Projects', 'Github']
+const navItems = ['Home', 'Github']
 </script>
-
-<style scoped>
-</style>

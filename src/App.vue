@@ -1,6 +1,6 @@
 <script setup>
-import { onBeforeMount } from 'vue'
 import HomeView from './Views/HomeView.vue';
+import { onBeforeMount } from 'vue'
 import { useDarkMode } from '../src/store/useDarkMode'
 import {storeToRefs} from 'pinia'
 
@@ -14,7 +14,7 @@ onBeforeMount(() => {
 </script>
 
 <template>
-    <div :class="[toggleDarkMode]" >
+    <div :class="[toggleDarkMode]">
         <HomeView />
     </div>
 </template>

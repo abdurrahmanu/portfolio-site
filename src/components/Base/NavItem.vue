@@ -1,7 +1,7 @@
 <template>
     <div 
     @click="route(item)" 
-    class=" hover:text-black font-mono uppercase font-black border border-transparent hover:border-black hover:rounded-md text-sm sm:text-base md:text-lg px-[2px] md:px-2 lg:px-3 dark:text-slate-100 dark:hover:border-slate-400">
+    class=" hover:text-black font-mono uppercase font-black border border-transparent hover:border-black hover:rounded-md text-sm md:text-base px-[2px] md:px-2 lg:px-3 dark:text-slate-100 dark:hover:border-slate-400">
         {{ item }}
     </div>
 </template>

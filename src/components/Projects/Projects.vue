@@ -1,9 +1,8 @@
 <template>
     <div id="projects" class="py-8 sm:py-10 dark:bg-neutral-900 w-fit m-auto">
-        <h1 class="text-center font-mono text-xl font-bold md:text-2xl dark:text-slate-300 pb-5 md:pb-10
-">PROJECTS</h1>
-        <div class="pmd:grid-cols-3 grid gap-6 rojects">
-            <projectComponent
+        <h1 class="text-center font-mono text-xl font-bold md:text-2xl dark:text-slate-300 pb-5 md:pb-10">PROJECTS</h1>
+        <div class="md:grid-cols-2 grid gap-6">
+            <Project
             @closeProjectImage="closeProject"
             @openProjectImage="projects[index].openImage = true"
             v-for="(project, index) in projects" 
@@ -17,7 +16,7 @@
 
 <script setup>
 import { ref } from 'vue'
-import projectComponent from './projectComponent.vue';
+import Project from './Project.vue';
 
 const projects = ref([
     {
