@@ -1,5 +1,5 @@
 <template>
-    <div class="flex justify-between pr-4 items-center border-b border-b-zinc-700 transition-all duration-100">
+    <div class="flex justify-between pr-4 items-center border-b border-b-zinc-700 transition-all duration-100 bg-zinc-100">
         <div class="flex gap-2 items-center px-4">
             <FullName />
         </div>

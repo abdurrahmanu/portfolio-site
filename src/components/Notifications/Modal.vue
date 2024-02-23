@@ -1,11 +1,11 @@
 <template>
     <Teleport to="body">
         <Transition name="overlay">           
-            <div @click="emitToggleValue" v-if="toggle" class="fixed top-0 left-0 w-full h-screen bg-black opacity-40"></div>
+            <div @click="emitToggleValue" v-if="toggle" class="fixed top-0 left-0 w-full h-screen bg-black opacity-40 z-[999999]"></div>
         </Transition>
         <Transition :name="transitionType" mode="in-out" appear>
-            <div ref="modalEl" class="fixed w-full" v-if="toggle" >
-                <div class="h-full w-full max-w-[500px] min-w-[90%] shadow-sm shadow-gray-500 m-auto">
+            <div ref="modalEl" class="fixed w-full z-[9999999]" v-if="toggle" >
+                <div class="h-full w-fit max-w-[500px] min-w-[80%] shadow-sm m-auto">
                     <slot ></slot>
                 </div>
             </div>
@@ -97,18 +97,13 @@ onMounted(() => {
 })
 
 watchEffect(() => {
-    if (props.toggle) {
-        setTimeout(() => {
-            toggle.value = true
-        }, 200);
-    }
+    if (props.toggle) toggle.value = true
+    if (!props.toggle) toggle.value = false
 })
 
 const emitToggleValue = () => {
     toggle.value = false
-    setTimeout(() => {
-        emit('close')
-    }, 500);
+    emit('close')
 }
 </script>
 
@@ -146,10 +141,6 @@ const emitToggleValue = () => {
 
 .right-leave-to {
     transform: translateX(100%);
-}
-
-.auto-leave-to {
-    
 }
 
 .top-leave-to {
