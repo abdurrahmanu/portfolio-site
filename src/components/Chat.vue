@@ -1,9 +1,5 @@
-<template>
-    <div class="ml-4 md:w-[50px] md:h-[50px] w-[40px] h-[40px] shadow-md sticky z-[999] bottom-6 left-4 shadow-zinc-400 grid place-content-center bg-white rounded-full rounded-bl-none dark:text-slate-400 dark:bg-neutral-600 dark:shadow-black">
-        <div class="text-center text-[10px] md:text-base p-2 dark:text-slate-200">CHAT</div>
-    </div>
-    
-    <div v-if="!showMessages" @click="showMessages = true" class="ml-4 md:w-[50px] md:h-[50px] w-[40px] h-[40px] shadow-md sticky z-[999] bottom-6 left-4 shadow-zinc-400 grid place-content-center bg-white rounded-full rounded-bl-none dark:text-slate-400 dark:bg-neutral-600 dark:shadow-black">
+<template>    
+    <div v-if="!showMessages" @click="showMessages = true" class="ml-4 md:w-[50px] md:h-[50px] w-[40px] h-[40px] shadow-md z-[999] bottom-3 shadow-zinc-400 grid place-content-center bg-white rounded-full rounded-bl-none dark:text-slate-400 dark:bg-neutral-600 dark:shadow-black fixed">
         <div class="text-center text-[10px] md:text-base p-2 dark:text-slate-200">CHAT</div>
     </div>
 
@@ -11,57 +7,59 @@
     :toggle="showMessages"
     @close="showMessages = false">
 
-    <div v-if="showMessages" class="p-1 bg-slate-500 dark:bg-neutral-900 rounded-md">
-        <div class="text-right font-mono p-2 pt-0 absolute top-0 right-0"><span @click="showMessages = false">X</span></div>
-            <div class="my-4 rounded-md  pr-1 relative  m-auto overflow-y-scroll">
-                <div class="max-h-[200px] h-full">
+    <div v-if="showMessages" class="rounded-md relative space-y-1 py-1 ring-1 bg-neutral-700 dark:bg-neutral-800">
+        <div class="text-right font-mono text-white px-1"><span @click="showMessages = false">X</span></div>
+        
+            <div class="border-b border-b-gray-900">
+                <div class="max-h-[300px] h-full overflow-y-scroll">
                     <div
                     @mouseover="showDeleteBtn = true"
                     v-for="(message, index) in messages" 
                     :key="index" 
-                    class="flex gap-2 relative p-2 py-2 items-center border-b dark:border-neutral-300 border-slate-300 hover:bg-slate-300">
+                    class="flex gap-2 relative p-2 items-center text-slate-300 font-sans hover:bg-neutral-900">
                         <div class="p-1 rounded-full bg-white border border-slate-400">
-                            <img class="w-5 h-6 rounded-full" src="/avatar.svg" alt="">
+                            <img class="w-6 rounded-full" src="/programmer.svg" alt="">
                         </div>
                         <div class="p-1 m-auto max-w-[500px] w-[90%] text-xs">{{message.message}}</div>
-                        <div v-if="showDeleteBtn" class="text-xs absolute right-[5px] top-[50%] translate-y-[-50%]">del</div>
                     </div>
                 </div>
             </div>
 
-            <div class="flex uppercase text-[10px] gap-10 w-[85%] py-2 m-auto justify-around"> 
-                <div class="">
-                    <img class="w-5 h-5" src="/message.svg" alt="">
-                    <div class="text-center">{{ allSiteReviews.messages }}</div>
+            <div class="flex justify-between p-2 text-sm pl-12">
+                <div class="flex w-fit justify-around gap-10 text-xs"> 
+                    <div>
+                        <img class="w-5 h-5" src="/message.svg" alt="">
+                        <div class="text-center">{{ allSiteReviews.messages }}</div>
+                    </div>
+                    <div>
+                        <img class="w-7 h-5" src="/LoveTransparent.svg" alt="">
+                        <div class="text-center">{{allSiteReviews.likes}}</div>
+                    </div>
+                    <div>
+                        <img class="w-7 h-5" src="/LoveTransparent.svg" alt="">
+                        <div class="text-center">{{allSiteReviews.views}}</div>
+                    </div>
                 </div>
-                <div class="">
-                    <img class="w-7 h-5" src="/LoveTransparent.svg" alt="">
-                    <div class="text-center">{{allSiteReviews.likes}}</div>
-                </div>
-                <div class="">
-                    <img class="w-7 h-5" src="/LoveTransparent.svg" alt="">
-                    <div class="text-center">{{allSiteReviews.views}}</div>
+
+                <div v-if="!writeMessage">
+                    <button @click="writeMessage = true" class="px-4 p-1 text-center bg-blue-300 dark:bg-cyan-600 rounded-full">write message</button>
                 </div>
             </div>
 
-            <div v-if="!writeMessage" class="text-right pr-10 p-2">
-                <button @click="writeMessage = true" class="text-xs px-4 p-1 text-center bg-blue-300 dark:bg-cyan-600 rounded-full">write message</button>
-            </div>
-
-            <div v-if="writeMessage" class="w-[90%] mt-2 m-auto  py-1 max-w-[500px]">
-                <div class="flex items-center relative w-[90%] max-w-[400px] m-auto gap-5">
+            <div v-if="writeMessage" class="pl-12 text-slate-300">
+                <div class="flex gap-2 items-center w-[90%] max-w-[400px]">
                     <input ref="messageInputRef" type="text" v-model="newMessage" class="rounded-full dark:text-black text-xs p-1 pl-5 w-full outline-none">
                     <img @click="sendMessage" class="w-5 h-5 rotate-[40deg]" src="/sendBtn.svg" />
                 </div>
-                <div class="pl-5 py-1 w-fit text-xs">
+                <div class="w-fit text-xs">
                     <p class="py-2 font-mono">ADD IMAGE FROM GALLERY...</p>
-                    <div class="flex gap-4 m-auto">
-                        <input class="" v-on:change="chosenFile = true" type="file" name="" id="">
+                    <div class="flex">
+                        <input class="appearance-none file:bg-green-200  file:px-5 font-serif rounded-md file:outline-none" v-on:change="chosenFile = true" type="file" name="" id="">
                         <button :class="[chosenFile ? 'bg-green-400' : 'bg-red-400']" class="px-7 rounded-full">post</button>
                     </div>
                 </div>
             </div>
-        </div>
+    </div>
 
     </Modal>
 </template>

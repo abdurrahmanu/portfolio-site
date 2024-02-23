@@ -5,7 +5,7 @@
         </Transition>
         <Transition :name="transitionType" mode="in-out" appear>
             <div ref="modalEl" class="fixed w-full" v-if="toggle" >
-                <div class="bg-neutral-800 h-full w-full max-w-[500px] min-w-[90%] shadow-sm shadow-gray-500 m-auto">
+                <div class="h-full w-full max-w-[500px] min-w-[90%] shadow-sm shadow-gray-500 m-auto">
                     <slot ></slot>
                 </div>
             </div>
