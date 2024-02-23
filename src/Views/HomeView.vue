@@ -1,5 +1,5 @@
 <template>
-    <div class="bg-slate-200 dark:bg-neutral-900 max-w-[1200px] mx-auto pt-20 md:pt-32 selection:bg-inherit relative">
+    <div class="bg-slate-200 dark:bg-neutral-900 max-w-[1200px] mx-auto selection:bg-inherit relative">
         <Header />
         <AboutMe />
         <Skills />
