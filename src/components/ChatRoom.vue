@@ -1,7 +1,7 @@
 <template>    
-    <div class="max-w-[500px] rounded-md relative space-y-1 py-1 bg-neutral-700 pb-4 font-mono">
+    <div class="max-w-[90%] w-[500px] m-auto rounded-md relative space-y-1 py-1 pb-4 font-mono bg-stone-500">
         <div class="text-right px-1"><span @click="$emit('closeMessages')" class="text-red-500 px-1 bg-zinc-800 rounded-md">X</span></div>
-        
+
             <div class="border-b border-b-gray-900">
                 <div class="max-h-[300px] h-full overflow-y-scroll">
                     <div
@@ -56,7 +56,7 @@
 </template>
 
 <script setup>
-import { ref, computed, onMounted, watch } from 'vue'
+import { ref, computed, onMounted } from 'vue'
 
 const showDeleteBtn = ref(false)
 const writeMessage = ref(false)

@@ -1,6 +1,6 @@
 <template>
     <div class="py-3">
-        <img @click="useDirection" class=" absolute z-[9999999] h-6 w-6 rounded-full p-1 bg-zinc-700" :class="topClass, bottomClass" src="/arrow.svg" />
+        <img @click="useDirection" class=" absolute z-[9999999] h-6 w-6 rounded-full p-1 bg-zinc-400" :class="topClass, bottomClass" src="/arrow.svg" />
     </div>
 </template>
 

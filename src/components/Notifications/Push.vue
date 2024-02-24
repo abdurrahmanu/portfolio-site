@@ -1,6 +1,6 @@
 <template>
     <Teleport to="body">
-        <div v-if="toggle" class="fixed z-[10] top-40 left-[50%] translate-x-[-50%] m-auto">
+        <div v-if="toggle" class="fixed z-[10] top-40 left-[50%] translate-x-[-50%]  w-[90%] max-w-[500px]">
             <div>
                 <Transition name="width-increase">
                     <div v-if="topLeft" class="bg-green-400 h-[3px] absolute left-0 w-[50%]"></div>
@@ -9,7 +9,7 @@
                     <div v-if="topRigth" class="bg-red-500 h-[3px]  absolute right-0 w-[50%]"></div>
                 </Transition>
             </div>
-            <div class="m-autol">
+            <div class="m-auto font-sans text-sm lg:text-base">
                 <slot />
             </div>
             <div>
@@ -25,14 +25,14 @@
 </template>
 
 <script setup>
-import { defineProps, ref, defineEmits, watchEffect } from 'vue';
+import { ref, watchEffect } from 'vue';
 
 const intervalId = ref(null)
 const props = defineProps({
     toggle: Boolean
 })
 
-const emit = defineEmits(['false'])
+const emit = defineEmits(['false', 'go'])
 const topLeft = ref(false)
 const topRigth = ref(false)
 const bottomLeft = ref(false)
@@ -51,9 +51,8 @@ watchEffect(() => {
             topRigth.value = false
             bottomLeft.value = false
             bottomRight.value = false
-            if (props.toggle) {
-                emit('false', 'completed');
-            } else return
+            emit('go')
+            emit('false');
         }, 6000);
     } else {
         clearInterval(intervalId.value)
