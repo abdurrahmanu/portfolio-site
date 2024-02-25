@@ -7,7 +7,6 @@
         <SendAMessage />
         <Footer />
         <Chat />
-        <Scroller top/>
     </div>
 </template>
 
@@ -19,7 +18,6 @@ import SendAMessage from '../components/SendAMessage.vue'
 import Projects from '../components/Projects/Projects.vue';
 import Header from '../components/Base/Header.vue'
 import Footer from '../components/Base/Footer.vue';
-import Scroller from '../components/Scroller.vue';
 </script>
 
 
