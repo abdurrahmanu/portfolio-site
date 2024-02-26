@@ -8,7 +8,7 @@
             </div>
 
             <div>
-                <div class="max-h-[300px] h-full overflow-y-scroll">
+                <div class="max-h-[300px] h-full overflow-y-auto">
                     <div
                     @mouseover="showDeleteBtn = true"
                     v-for="(message, index) in messages" 
@@ -17,25 +17,25 @@
                         <div class="p-1 rounded-full bg-white border border-slate-400">
                             <img class="w-6 rounded-full" src="/programmer.svg" alt="">
                         </div>
-                        <div class="p-1 m-auto max-w-[500px] w-[90%] text-xs">{{message.message}}</div>
+                        <div class="p-1 m-auto max-w-[500px] w-[90%] text-sm md:text-base">{{message.message}}</div>
                     </div>
                 </div>
             </div>
 
-            <div class="text-right px-3 py-2 text-xs md:text-sm bg-neutral-700">
+            <div class="text-center py-2 text-xs md:text-sm bg-neutral-700 ">
                 <button :class="[!writeMessage ? 'hover:bg-green-700' : 'hover:bg-red-700']" @click="writeMessage = !writeMessage" class="px-7 bg-white text-black uppercase hover:text-white py-1">{{ !writeMessage ? 'chat' : 'close' }}</button>
             </div>
 
             <Transition v-if="writeMessage" appear>
-                <div  class="pl-12 text-slate-300 transition-all duration-150 py-2  bg-neutral-600">
-                    <div class="flex items-center w-[90%] max-w-[400px] relative bg-gradient-to-tr from-pink-700 via-blue-600 to-red-300 rounded-full p-1 border border-neutral-700">
-                        <input ref="messageInputRef" type="text" placeholder="drop a chat..." v-model="newMessage" class="rounded-full text-xs font-serif p-1 pl-5 w-full outline-none text-black placeholder:text-black">
+                <div  class="pl-5 text-slate-300 transition-all duration-150 py-2  bg-neutral-600">
+                    <div class="flex items-center w-[90%] max-w-[400px] relative rounded-full p-[2px] border border-neutral-700">
+                        <input ref="messageInputRef" type="text" placeholder="drop a chat..." v-model="newMessage" class="rounded-full text-sm md:text-base font-serif p-1 pl-5 w-full outline-none text-black placeholder:text-black">
                         <img @click="sendMessage" class="w-5 h-5 rotate-[40deg]" src="/sendBtn.svg" />
                     </div>
                     <div class="w-fit text-xs py-2">
                         <p class="py-2 text-white">ADD FILE...</p>
                         <div class="flex">
-                            <input class="appearance-none file:bg-green-200 hover:file:bg-green-400 text-white  file:px-3 font-serif file:rounded-full file:border-none w-fit" v-on:change="chosenFile = true" type="file" name="" id="">
+                            <input class="appearance-none file:bg-green-200 hover:file:bg-green-400 text-white  file:px-3 font-serif file:rounded-full file:border-none" v-on:change="chosenFile = true" type="file" name="" id="">
                             <button class="px-7 bg-white text-black uppercase hover:bg-black hover:text-white py-1">post</button>
                         </div>
                     </div>

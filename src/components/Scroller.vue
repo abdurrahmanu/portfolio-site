@@ -1,5 +1,5 @@
 <template>
-    <img @click="useDirection" class="h-6 w-6 rounded-full p-1 bg-zinc-400" :class="topClass, bottomClass" src="/arrow.svg" />
+    <img @click="useDirection" class="h-6 w-6 rounded-full p-1 bg-zinc-400 absolute" :class="topClass, bottomClass" src="/arrow.svg" />
 </template>
 
 <script setup>

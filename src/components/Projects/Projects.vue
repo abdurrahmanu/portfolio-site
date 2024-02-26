@@ -20,6 +20,27 @@ import Project from './Project.vue';
 
 const projects = ref([
     {
+        name: 'vue-reusables',
+        stack: ['HTML', 'CSS', 'JavaScript', 'TailwindCSS', 'VueJS'],
+        link: '',
+        code: 'https://github.com/abdurrahmanu/tic-tac-toe',
+        openImage: false,
+    },
+    {
+        name: 'tic-tac-toe',
+        stack: ['HTML', 'CSS', 'JavaScript', 'TailwindCSS', 'VueJS'],
+        link: 'http://myxando.netlify.app',
+        code: 'https://github.com/abdurrahmanu/tic-tac-toe',
+        openImage: false,
+    },
+    {
+        name: 'learn typing',
+        stack: ['HTML', 'CSS', 'JavaScript', 'TailwindCSS', 'VueJS'],
+        link: 'http://app-speed-typing.netlify.app/',
+        code: 'https://github.com/abdurrahmanu/learn-typing',
+        openImage: false,
+    },
+    {
         name: 'instagram-ui',
         stack: ['HTML', 'CSS', 'JavaScript', 'TailwindCSS', 'VueJS'],
         link: 'http://cloned-insta.netlify.app/',
@@ -31,41 +52,6 @@ const projects = ref([
         stack: ['HTML', 'CSS', 'JavaScript', 'TailwindCSS', 'VueJS'],
         link: 'http://otp-comp.netlify.app',
         code: 'https://github.com/abdurrahmanu/otp-vue',
-        openImage: false,
-    },
-    {
-        name: 'tic-tac-toe',
-        stack: ['HTML', 'CSS', 'JavaScript', 'TailwindCSS', 'VueJS'],
-        link: 'http://myxando.netlify.app',
-        code: 'https://github.com/abdurrahmanu/tic-tac-toe',
-        openImage: false,
-    },
-    {
-        name: 'advice generator',
-        stack: ['HTML', 'CSS', 'JavaScript', 'TailwindCSS', 'VueJS'],
-        link: 'http://advicegent.netlify.app',
-        code: 'https://github.com/abdurrahmanu/Frontend-mentor-Advice-generator',
-        openImage: false,
-    },
-    {
-        name: 'expense chart',
-        stack: ['HTML', 'CSS', 'JavaScript', 'TailwindCSS', 'VueJS'],
-        link: 'http://chartt.netlify.app',
-        code: 'https://github.com/abdurrahmanu/Frontend-mentor-expenses-chart',
-        openImage: false,
-    },
-    {
-        name: 'job filter',
-        stack: ['HTML', 'CSS', 'JavaScript', 'TailwindCSS', 'VueJS'],
-        link: 'http://jobfilters.netlify.app',
-        code: 'https://github.com/abdurrahmanu/Frontend-mentor-job-filter',
-        openImage: false,
-    },
-    {
-        name: 'learn typing',
-        stack: ['HTML', 'CSS', 'JavaScript', 'TailwindCSS', 'VueJS'],
-        link: 'http://app-speed-typing.netlify.app/',
-        code: 'https://github.com/abdurrahmanu/learn-typing',
         openImage: false,
     },
 ])

@@ -11,13 +11,13 @@
 </template>
 
 <script setup>
-import Chat from '../components/Chat.vue';
 import Skills from '../components/Skills/Skills.vue';
 import AboutMe from '../components/Base/AboutMe.vue';
 import SendAMessage from '../components/SendAMessage.vue'
 import Projects from '../components/Projects/Projects.vue';
 import Header from '../components/Base/Header.vue'
 import Footer from '../components/Base/Footer.vue';
+import Chat from '../components/Chat.vue';
 </script>
 
 

@@ -1,9 +1,8 @@
 <template>
-    <div 
-    class="relative mx-auto dark:bg-neutral-900">
-        <div class="w-full p-1 relative">
+    <div class="relative mx-auto dark:bg-neutral-900">
+        <div class="w-full  relative">
                 <div class="max-w-[600px] w-[100%] mx-auto">
-                    <p class="font-mono dark:text-white text-zinc-500 w-[90%] m-auto text-sm sm:text-base md:text-lg md:text-center underline">SEND A MESSAGE</p>
+                    <p class="font-mono dark:text-white text-zinc-500 w-[90%] m-auto text-sm sm:text-base md:text-lg md:text-center underline">SEND A MAIL</p>
                     <div class="relative m-auto w-[90%] max-w-[500px]">
                         <textarea 
                         :placeholder="textareaPlaceholder" 
@@ -23,7 +22,7 @@
 import { ref } from 'vue';
 
 const props = defineProps({ toggle: Boolean })
-const textareaPlaceholder = ref('send a message to me')
+const textareaPlaceholder = ref('send a mail')
 const message = ref('')
 
 const submit = (e) => {
@@ -31,9 +30,9 @@ const submit = (e) => {
     if (message.value.length) {
             window.open(`mailto:ahmedabdulrahman103@gmail.com?subject=portfolio?body=${message.value}`)
     } else {
-        textareaPlaceholder.value = 'write a message'
+        textareaPlaceholder.value = 'write a mail'
         setTimeout(() => {
-            textareaPlaceholder.value = 'send a message to me'
+            textareaPlaceholder.value = 'send a mail'
         }, 2200);
     }
 }
