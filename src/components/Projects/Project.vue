@@ -6,7 +6,7 @@
       <div class="flex items-center justify-between px-3 text-sm font-mono sm:text-base">
         <p class="uppercase md:text-center text-white flex items-center gap-3">{{ project.name }}</p>
           <div class="uppercase text-center font-light text-white py-4">
-            <a :class="[project.link ? 'text-white' : 'text-gray-500 cursor-not-allowed']" class="border border-transparent rounded-md p-[6px] hover:border-zinc-400" :href="project.link" target="_blank">link</a>
+            <a :class="[project.link !== 'none' ? 'text-white' : 'text-gray-500 cursor-not-allowed']" class="border border-transparent rounded-md p-[6px] hover:border-zinc-400" :href="project.link" target="_blank">link</a>
             <a class="border border-transparent rounded-md p-[6px] hover:border-zinc-400" :href="project.code" target="_blank">repo</a>
           </div>
         </div>

@@ -1,6 +1,5 @@
 <template>
-    <div class="flex justify-center items-center p-3 relative">
-        <div class="dark:text-slate-300 text-black font-mono italic text-center">&copy{{ new Date().getFullYear() }}</div>
+    <div class="flex justify-center items-center p-3 relative pt-7">
         <Scroller top />
     </div>
 </template>

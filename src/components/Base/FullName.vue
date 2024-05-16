@@ -1,5 +1,5 @@
 <template>
-        <div class="flex gap-3 p-3 pl-1 screen-small:text-sm text-base  font-mono uppercase justify-start font-black  dark:font-light">
+        <div class="flex gap-3 p-3 pl-1 screen-small:text-base text-lg  font-mono uppercase justify-start font-black  dark:font-light">
             <div>
                 <span class="px-[1px]  hover:text-neutral-400" v-for="(letter, index) in lastName" :key="index">{{ letter }}</span>
             </div>

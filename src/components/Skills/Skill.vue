@@ -1,9 +1,9 @@
 <template>
         <div class="relative" @mouseover="toggleTooltip = true" @mouseleave="toggleTooltip = false">
-            <Tooltip :value="svg" :toggle="toggleTooltip" class="screen-small:hidden"/>
+            <!-- <Tooltip :value="svg" :toggle="toggleTooltip" class="screen-small:hidden"/> -->
             <div class="w-fit">
             <div class="rounded-full border-2 border-black bg-slate-300 w-fit m-auto screen-small:hidden">
-                <div class="grid w-fit m-auto justify-center p-2">
+                <div class="grid w-fit m-auto justify-center p-2 ">
                     <img class="w-6 md:w-6" :src="`/${svg}.svg`" alt="">
                 </div>
             </div>

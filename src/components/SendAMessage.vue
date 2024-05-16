@@ -1,19 +1,15 @@
 <template>
-    <div class="relative mx-auto dark:bg-neutral-900">
-        <div class="w-full  relative">
-                <div class="max-w-[600px] w-[100%] mx-auto">
-                    <p class="font-mono dark:text-white text-zinc-500 w-[90%] m-auto text-sm sm:text-base md:text-lg md:text-center underline">SEND A MAIL</p>
-                    <div class="relative m-auto w-[90%] max-w-[500px]">
-                        <textarea 
-                        :placeholder="textareaPlaceholder" 
-                        v-model="message" 
-                        :class="[textareaPlaceholder === 'write a message' ? 'placeholder:text-red-400' : 'placeholder:text-slate-200']"
-                        class="p-2 py-2 dark:bg-zinc-800 dark:text-white bg-white shadow shadow-black m-auto outline-none rounded-md min-h-[200px] text-sm sm:text-base w-full"
-                        cols="30" 
-                        rows="4"/>
-                        <img @click.prevent="submit" class="w-7 h-7 absolute  bottom-3 right-3" src="/sendBtn.svg" alt="">
-                    </div>
-                </div>
+    <div class="relative mx-auto w-[90%] max-w-[500px] dark:bg-neutral-900">
+        <p class="font-mono dark:text-white text-zinc-500 m-auto text-sm sm:text-base md:text-lg md:text-center underline">SEND A MAIL</p>
+        <div class="relative m-auto w-[100%]">
+            <textarea 
+            :placeholder="textareaPlaceholder" 
+            v-model="message" 
+            :class="[textareaPlaceholder === 'write a message' ? 'placeholder:text-red-400' : 'placeholder:text-slate-200']"
+            class="p-2 py-2 dark:bg-zinc-800 dark:text-white bg-white shadow shadow-black m-auto outline-none rounded-md min-h-[200px] text-sm sm:text-base w-full"
+            cols="30" 
+            rows="4"/>
+            <img @click.prevent="submit" class="w-7 h-7 absolute  bottom-3 right-3" src="/sendBtn.svg" alt="">
         </div>
     </div>
 </template>

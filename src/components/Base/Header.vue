@@ -10,8 +10,8 @@
             <Navbar />
             <DownloadButton />
         </div>
-        <div class="h-[2px] bg-white">
-            <div ref="scroll" class="h-[2px] bg-gradient-to-tr from-blue-500 via-green-800 to-green-200"></div>
+        <div class="h-1 bg-white">
+            <div ref="scroll" class="h-1 bg-gradient-to-tr from-blue-400 via-green-400 to-green-200"></div>
         </div>
     </div>
 </template>
