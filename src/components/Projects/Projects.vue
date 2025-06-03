@@ -36,7 +36,7 @@ const projects = ref([
     {
         name: 'portfolio',
         stack: ['HTML', 'CSS', 'JavaScript', 'TailwindCSS', 'VueJS'],
-        link: window.scrollTo(0,0),
+        link: https://dorayii.netlify.app,
         code: 'https://github.com/abdurrahmanu/portfolio-site.git',
         openImage: false,
     },
