@@ -24,7 +24,7 @@ const open = ref(false)
 
 const downloadResume = (toggleValue) => {
     if (toggleValue === 'yes') {
-        window.open('resume.pdf')
+        
     }
     open.value = false
 }
